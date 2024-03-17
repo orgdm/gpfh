@@ -13,7 +13,7 @@ const links = [
 ];
 
 const baseStyle =
-  'fixed z-10 top-0 bottom-0 right-0 w-full transition-translate duration-300 md:duration-300 ease-out';
+  'fixed z-10 top-0 bottom-0 right-0 w-full transition-translate duration-300 ease-out';
 
 const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
   const menu = useRef<HTMLDivElement | null>(null);
@@ -52,7 +52,7 @@ const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
             <div className='w-full h-full'></div>
           </div>
         </div>
-        <div className='w-full h-full block relative bg-stone-600 md:col-span-5'>
+        <div className='w-full h-full block relative bg-stone-600/60 md:col-span-5'>
           <div className='bg-transparent pointer-events-none h-head'></div>
           <div className='mt-12 mb-10'>
             <ul className='flex flex-col w-full pointer-events-auto px-8'>
