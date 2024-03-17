@@ -2,7 +2,7 @@
 
 const Footer = () => {
   return (
-    <footer id='footer' className='bg-stone-300'>
+    <footer id='footer' className='bg-stone-400'>
       <div className='min-h-48'>
         <div className='flex flex-col w-full'>
           <div>
