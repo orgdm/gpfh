@@ -1,6 +1,5 @@
 # This is a basic workflow to help you get started with Actions
-name: Connect to an AWS role from a GitHub repository
-
+name: Build and Deploy Next.js web app to s3 and CloudFront
 # Controls when the action will run. Invokes the workflow on push events but only for the main branch
 on:
   push:
@@ -15,19 +14,39 @@ env:
 permissions:
   id-token: write # This is required for requesting the JWT
   contents: read # This is required for actions/checkout
+
 jobs:
-  AssumeRoleAndCallIdentity:
+  BuildThenDeploy:
+    name: Build Then Deploy
     runs-on: ubuntu-latest
+
     steps:
-      - name: Git clone the repository
-        uses: actions/checkout@v3
-      - name: configure aws credentials
-        uses: aws-actions/configure-aws-credentials@v1.7.0
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node Setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Yarn
+        run: npm install -g yarn
+
+      - name: Install deps
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn build
+
+      - name: Configure AWS Creds
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::315256778392:role/GH-Action-AssumeRole #change to reflect your IAM role’s ARN
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
-      # Hello from AWS: WhoAmI
-      - name: Sts GetCallerIdentity
-        run: |
-          aws sts get-caller-identity
+
+      - name: Deploy to S3
+        run: aws s3 sync ./out s3://biz-web-test
+
+      - name: Invalidate CloudFront Cache
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CF_DIST_ID }} --paths "/*"
