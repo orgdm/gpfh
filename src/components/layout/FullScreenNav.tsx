@@ -46,13 +46,13 @@ const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
       <div className='grid grid-rows-1 grid-cols-1 md:grid-rows-[1fr] md:grid-cols-12 relative w-full h-full'>
         <div
           ref={menu}
-          className='md:w-full hidden md:block md:h-full md:col-span-7 relative bg-transparent '
+          className='md:w-full hidden md:block md:h-full md:col-span-7 relative md:bg-transparent'
         >
           <div className='w-full h-full'>
             <div className='w-full h-full'></div>
           </div>
         </div>
-        <div className='w-full h-full block relative bg-stone-800/20 blur-3xl  md:col-span-5'>
+        <div className='w-full h-full block relative bg-stone-800/10 backdrop-blur-3xl md:col-span-5'>
           <div className='bg-transparent pointer-events-none h-head'></div>
           <div className='mt-12 mb-10'>
             <ul className='flex flex-col w-full pointer-events-auto px-8'>
