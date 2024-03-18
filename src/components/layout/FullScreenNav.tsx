@@ -38,8 +38,8 @@ const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
         `${baseStyle}` +
         `${
           open
-            ? ' -translate-x-0 md:translate-y-0 md:translate-x-0'
-            : ' translate-x-full md:-translate-y-full md:translate-x-0'
+            ? ' -translate-x-0 md:translate-y-0 md:translate-x-0 opacity-100'
+            : ' translate-x-full md:-translate-y-full md:translate-x-0 opacity-0'
         }`
       }
     >
@@ -52,7 +52,7 @@ const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
             <div className='w-full h-full'></div>
           </div>
         </div>
-        <div className='w-full h-full block relative bg-stone-600/60 md:col-span-5'>
+        <div className='w-full h-full block relative bg-stone-800/20 blur-3xl  md:col-span-5'>
           <div className='bg-transparent pointer-events-none h-head'></div>
           <div className='mt-12 mb-10'>
             <ul className='flex flex-col w-full pointer-events-auto px-8'>

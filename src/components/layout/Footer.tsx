@@ -2,16 +2,27 @@
 
 const Footer = () => {
   return (
-    <footer id='footer' className='bg-stone-400'>
-      <div className='min-h-48'>
+    <footer id='footer' className='bg-stone-700'>
+      <div className='min-h-48 px-4'>
         <div className='flex flex-col w-full'>
           <div>
-            <h6>Quick Links</h6>
+            <h5>Quick Links</h5>
             <ul>
               <li>link 1</li>
-              <li>link 1</li>
-              <li>link 1</li>
+              <li>link 2</li>
+              <li>link 3</li>
             </ul>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <ul>
+              <li>info 1</li>
+              <li>info 2</li>
+              <li>info 3</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Newsletter</h4>
           </div>
         </div>
       </div>
