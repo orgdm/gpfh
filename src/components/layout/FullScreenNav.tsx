@@ -10,6 +10,8 @@ type FullScreenNavProps = {
 const links = [
   { title: 'home', href: '/' },
   { title: 'about', href: '/about' },
+  { title: 'work', href: '/work' },
+  { title: 'contact', href: '/contact' },
 ];
 
 const baseStyle =

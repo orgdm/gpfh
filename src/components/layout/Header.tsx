@@ -23,7 +23,7 @@ const Header = () => {
 
   return (
     <>
-      <header className='fixed z-1 left-0 right-0 top-0 bottom-auto bg-stone-800'>
+      <header className='fixed z-1 left-0 right-0 top-0 shadow-head bottom-auto bg-stone-800'>
         <div className='relative px-4 h-head'>
           <div className='flex w-full h-full flex-row justify-between'>
             <div className='flex items-center list-none relative'>

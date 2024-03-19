@@ -21,11 +21,11 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       height: {
-        'head': '52px',
+        'head': '43px',
       },
-      minHeight: {
-        'fullscr': '100svh'
-      },
+      boxShadow: {
+        'head': '0 1px 7px rgba(41,37,36,0.85)'
+      }
     },
   },
   plugins: [],
