@@ -8,7 +8,17 @@ type ServiceProps = {
 };
 
 const Service = ({ img, title, desc, reverse }: ServiceProps) => {
-  return <div>Service</div>;
+  return (
+    <div className='p-4'>
+      <div className={`flex ${reverse ? 'flex-row-reverse' : 'flex-row'}`}>
+        <div>
+          <h3>{title}</h3>
+          <img src={img} alt={title} />
+        </div>
+        <div>{desc}</div>
+      </div>
+    </div>
+  );
 };
 
 export default Service;
