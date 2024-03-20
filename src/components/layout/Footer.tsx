@@ -10,7 +10,7 @@ const Footer = () => {
             <div>
               <ul>
                 <li>
-                  <Link href={'/work'}>work</Link>
+                  <Link href={'/projects'}>projects</Link>
                 </li>
                 <li>
                   <Link href={'/contact'}>contact</Link>
@@ -18,10 +18,13 @@ const Footer = () => {
                 <li>
                   <Link href={'/about'}>about</Link>
                 </li>
+                <li>
+                  <Link href={'/people'}>people</Link>
+                </li>
               </ul>
             </div>
             <div>
-              <h4>Newsletter</h4>
+              <Link href={'/newsletter'}>Newsletter</Link>
             </div>
           </div>
           <div>
@@ -29,7 +32,7 @@ const Footer = () => {
           </div>
         </div>
         <div className='flex justify-center'>
-          <p>&#169; 2024</p>
+          <p className='text-sm'>&#169; 2024 Grove Park Fine Homes</p>
         </div>
       </div>
     </footer>

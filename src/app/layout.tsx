@@ -1,14 +1,21 @@
 import type { Metadata } from 'next';
-import { Inter, Pathway_Extreme } from 'next/font/google';
+import { Poppins, Open_Sans } from 'next/font/google';
 import './globals.css';
 import SkipToMain from '@/components/layout/SkipToMain';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
-const sans = Pathway_Extreme({
+const sans = Poppins({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-pathex',
+  variable: '--font-poppins',
+  style: ['normal', 'italic'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+});
+
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  variable: '--font-open-sans',
 });
 
 export const metadata: Metadata = {
@@ -22,11 +29,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className={`overflow-auto bg-stone-800 ${sans.variable}`}>
+    <html
+      lang='en'
+      className={`overflow-auto bg-stone-800 ${sans.variable} ${openSans.variable}`}
+    >
       <body className={'overscroll-none bg-stone-800'}>
         <SkipToMain />
         <Header />
-        <div className='h-head'></div>
+        {/* <div className='h-head'></div> */}
         <main
           id='mainContent'
           className={`bg-stone-950 min-h-fullscr font-sans`}
