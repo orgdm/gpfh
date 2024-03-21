@@ -41,12 +41,12 @@ jobs:
       - name: Configure AWS Creds
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::315256778392:role/GH-Action-AssumeRole #change to reflect your IAM role’s ARN
+          role-to-assume: arn:aws:iam::058264518801:role/gh-deploy-gpfh #change to reflect your IAM role’s ARN
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Deploy to S3
-        run: aws s3 sync ./out s3://gpfh-site
+        run: aws s3 sync ./out s3://gpfh-web
 
       - name: Invalidate CloudFront Cache
-        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CF_DIST_ID }} --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.GPFH_DIST_ID }} --paths "/*"
