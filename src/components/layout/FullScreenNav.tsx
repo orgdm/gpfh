@@ -15,7 +15,7 @@ const links = [
 ];
 
 const baseStyle =
-  'fixed -z-10 top-0 md:top-[43px] bottom-0 right-0 w-full transition-translate duration-300 ease-out';
+  'fixed top-0 bottom-0 right-0 w-full transition-transform duration-300 ease-out';
 
 const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
   const menu = useRef<HTMLDivElement | null>(null);
@@ -40,17 +40,17 @@ const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
         `${baseStyle}` +
         `${
           open
-            ? ' -translate-x-0 md:translate-y-0 md:translate-x-0 opacity-100 pointer-events-auto'
-            : ' translate-x-full md:-translate-y-full md:translate-x-0 opacity-0 pointer-events-none'
+            ? ' -translate-x-0 md:translate-y-0 md:translate-x-0 pointer-events-auto opacity-100'
+            : ' translate-x-full md:-translate-y-full md:translate-x-0 pointer-events-none opacity-0'
         }`
       }
     >
-      <div className='grid grid-rows-1 grid-cols-1 md:grid-rows-[1fr] md:grid-cols-12 relative w-full h-full'>
+      <div className='grid grid-rows-1 grid-cols-1 md:grid-rows-[1fr] md:grid-cols-12 relative w-full h-[calc(100vh - 77px)]'>
         <div
           ref={menu}
-          className={`md:w-full hidden md:block md:h-full md:col-span-4 relative md: md:opacity-${
+          className={`md:w-full hidden md:block md:h-full md:col-span-4 md:bg-head md:backdrop-blur-sm   relative ease-in md:opacity-${
             open ? '0' : '100'
-          }  md:transition-[opacity]`}
+          }  md:transition-opacity md:delay-300 md:duration-100`}
         >
           <div className='w-full h-full'>
             <div className='w-full h-full'></div>

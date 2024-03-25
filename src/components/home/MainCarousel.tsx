@@ -70,7 +70,11 @@ export function MainCarousel() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className='absolute bottom-7 w-full z-10'>
+        <div
+          className={`absolute bottom-7 w-full z-10 transition-opacity ${
+            api ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
           <div className='flex flex-col justify-center'>
             <Button
               className='mx-auto pointer-events-auto'

@@ -9,12 +9,12 @@ const Service = ({ img, title, desc, reverse }: ServiceProps) => {
   });
 
   return (
-    <div ref={ref} className='shadow-md'>
+    <picture ref={ref} className={``}>
       <div className={`relative object-contain aspect-video h-auto`}>
         <img
           src={img}
           alt={title}
-          className={`absolute w-full aspect-[3/2] h-full rounded-lg transition-opacity duration-700 ease-linear ${
+          className={`absolute w-full will-change-[opacity] aspect-[3/2] h-full rounded-lg transition-opacity duration-500 origin-center bg-origin-border ease ${
             inView ? 'opacity-100' : 'opacity-0'
           }`}
           loading='lazy'
@@ -29,7 +29,7 @@ const Service = ({ img, title, desc, reverse }: ServiceProps) => {
           </h3>
         </div>
       </div>
-    </div>
+    </picture>
   );
 };
 

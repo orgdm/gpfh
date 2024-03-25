@@ -24,7 +24,7 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "overlay": "linear-gradient(rgba(0, 0, 0, 0) 75%, rgb(0, 0, 0) 100%",
+        "overlay": "linear-gradient(rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0) 100%",
         'head': 'linear-gradient(rgba(0, 0, 0, 0.468), rgba(0, 0, 0, 0))',
         'head-overlay': 'linear-gradient(to top, rgba(0, 0, 0, 0), rgba(10, 10, 10, 0.45))'
       },

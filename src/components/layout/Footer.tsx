@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import { ArrowUpIcon } from '@radix-ui/react-icons';
 
 const Footer = () => {
   return (
@@ -10,8 +11,11 @@ const Footer = () => {
             <div className='flex w-full h-full flex-row flex-wrap justify-between'>
               <div>LOGO</div>
               <div>
-                <button onClick={() => window.scrollTo(0, 0)}>
-                  return to top
+                <button
+                  className='flex flex-row items-center'
+                  onClick={() => window.scrollTo(0, 0)}
+                >
+                  <span className='me-2'>back to top</span> <ArrowUpIcon />
                 </button>
               </div>
             </div>
