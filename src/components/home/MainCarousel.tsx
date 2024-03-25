@@ -1,8 +1,8 @@
 'use client';
-import * as React from 'react';
+import { useState, useEffect, useRef } from 'react';
+
 import { Button } from '../ui/button';
 import Link from 'next/link';
-import { CardContent } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
@@ -10,6 +10,7 @@ import {
   type CarouselApi,
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
+import { CaretRightIcon } from '@radix-ui/react-icons';
 
 const imgs = [
   {
@@ -27,15 +28,13 @@ const imgs = [
 ];
 
 export function MainCarousel() {
-  const [api, setApi] = React.useState<CarouselApi>();
-  const [current, setCurrent] = React.useState(0);
-  const [count, setCount] = React.useState(0);
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
 
-  const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true })
-  );
+  const plugin = useRef(Autoplay({ delay: 4444, stopOnInteraction: false }));
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!api) {
       return;
     }
@@ -49,43 +48,53 @@ export function MainCarousel() {
   }, [api]);
 
   return (
-    <div>
+    <>
       <Carousel
         opts={{ loop: true }}
-        // plugins={[plugin.current]}
+        plugins={[plugin.current]}
         setApi={setApi}
         className='w-full h-svh flex'
       >
         <CarouselContent className='h-full'>
           {imgs.map((img, index) => (
             <CarouselItem className='h-full w-full' key={index}>
-              <CardContent className='flex p-0 justify-center h-full w-full'>
-                <div className={`object-cover flex w-full h-full `}>
-                  <img className='w-full' src={img.bg} alt={img.title} />
-                </div>
-              </CardContent>
+              <div className={`object-cover flex w-full h-full`}>
+                <img
+                  className='w-full h-auto overflow-hidden'
+                  src={img.bg}
+                  alt={img.title}
+                  sizes='100vw'
+                  srcSet={`${img.bg} 100vw`}
+                />
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className='absolute bottom-10 w-full z-10'>
+        <div className='absolute bottom-7 w-full z-10'>
           <div className='flex flex-col justify-center'>
             <Button
               className='mx-auto pointer-events-auto'
               variant={'landing'}
-              size={'lg'}
+              size={'landing'}
               asChild
             >
-              <Link className='max-w-[600px]' href={'/projects'}>
-                view our work
+              <Link
+                href={'/projects'}
+                className='max-w-[600px] flex flex-row justify-between'
+              >
+                <span className='me-6 font-medium text-main'>
+                  View Projects
+                </span>
+                <CaretRightIcon width={30} height={30} />
               </Link>
             </Button>
-            <div className='flex justify-center mt-14'>
+            <div className='flex justify-center mt-12'>
               {Array.from({ length: count }).map((i, index) => (
                 <span
                   key={index}
                   onClick={() => api && api.scrollTo(index)}
-                  className={`inline-block rounded-full border h-3 w-3 border-white mx-2 ${
-                    index + 1 === current ? 'bg-white' : 'bg-stone-200/20'
+                  className={`inline-block rounded-full border h-3 w-3 outline-white mx-2 ${
+                    index + 1 === current ? 'bg-white' : 'bg-stone-100/10'
                   }`}
                 />
               ))}
@@ -93,10 +102,7 @@ export function MainCarousel() {
           </div>
         </div>
       </Carousel>
-      <div className='py-2 text-center text-sm text-muted-foreground'>
-        Slide {current} of {count}
-      </div>
-    </div>
+    </>
   );
 }
 

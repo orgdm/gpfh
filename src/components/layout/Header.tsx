@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import FullScreenNav from './FullScreenNav';
 
 const openBtnStyle =
@@ -20,6 +20,7 @@ const links = [
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [scrollDir, setScrollDir] = useState<number>(2);
 
   const handleMenu = (
     event: React.MouseEvent<
@@ -29,11 +30,52 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
+  useEffect(() => {
+    const thresh = 3;
+    let lastY: number = window.scrollY;
+    let ticking: boolean = false;
+
+    const updateDir = () => {
+      const y: number = window.scrollY;
+      const initial: boolean = lastY < 5;
+
+      if (Math.abs(y - lastY) < thresh) {
+        ticking = false;
+        return;
+      }
+      const dir: number = initial ? 2 : y > lastY ? 0 : 1;
+      setScrollDir(dir);
+      lastY = y > 0 ? y : 0;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateDir);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [scrollDir]);
+
   return (
     <>
-      <header className='fixed z-50 left-0 right-0 top-0 shadow-head bottom-auto bg-stone-800/20 backdrop-blur-3xl'>
-        <div className='relative px-4 h-head bg-stone-800/20 '>
-          <div className='flex w-full h-full flex-row justify-between xl:grid xl:grid-cols-12 xl:grid-rows-1'>
+      <header
+        className={`fixed z-50 left-0 right-0 bottom-auto transition-[top] duration-150 ease-out bg-scroll ${
+          scrollDir > 0 ? 'top-0' : '-top-20'
+        }`}
+      >
+        <div
+          className={`relative px-4 h-head transition-[background-color] duration-300 ease-in ${
+            scrollDir < 2 ? 'bg-stone-950' : 'bg-head-overlay'
+          }`}
+        >
+          <div
+            style={{ textShadow: 'rgba(0, 0, 0, 0.004) 1px 1px 1px' }}
+            className='flex w-full h-full flex-row justify-between xl:grid xl:grid-cols-12 xl:grid-rows-1'
+          >
             <div className='flex items-center list-none relative xl:col-start-1 xl:col-end-3'>
               <Link href={'/'}>logo</Link>
             </div>
@@ -53,14 +95,17 @@ const Header = () => {
             </ul>
             <ul className='hidden xl:col-start-3 xl:col-end-7 xl:flex xl:items-center xl:justify-evenly'>
               {links.slice(0, 4).map((link, index) => (
-                <li className='capitalize tracking-wide' key={index}>
+                <li
+                  className='capitalize tracking-wider font-light'
+                  key={index}
+                >
                   <Link href={link.href}>{link.title}</Link>
                 </li>
               ))}
             </ul>
             <ul className='hidden xl:col-start-9 xl:col-end-13 xl:flex xl:items-center xl:justify-self-end xl:justify-evenly'>
               {links.slice(4, 6).map((link, index) => (
-                <li className='me-6 tracking-wide' key={index}>
+                <li className='me-6 tracking-wider font-light' key={index}>
                   <Link href={link.href}>{link.title}</Link>
                 </li>
               ))}

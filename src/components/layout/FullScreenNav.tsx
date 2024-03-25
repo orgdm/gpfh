@@ -15,7 +15,7 @@ const links = [
 ];
 
 const baseStyle =
-  'fixed z-10 top-0 bottom-0 right-0 w-full transition-translate duration-300 ease-out';
+  'fixed -z-10 top-0 md:top-[43px] bottom-0 right-0 w-full transition-translate duration-300 ease-out';
 
 const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
   const menu = useRef<HTMLDivElement | null>(null);
@@ -48,16 +48,16 @@ const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
       <div className='grid grid-rows-1 grid-cols-1 md:grid-rows-[1fr] md:grid-cols-12 relative w-full h-full'>
         <div
           ref={menu}
-          className={`md:w-full hidden md:block md:h-full md:col-span-4 relative md:bg-[rgba(0,0,0,0.22)] md:opacity-${
+          className={`md:w-full hidden md:block md:h-full md:col-span-4 relative md: md:opacity-${
             open ? '0' : '100'
-          } md:delay-300 md:transition-[opacity]`}
+          }  md:transition-[opacity]`}
         >
           <div className='w-full h-full'>
             <div className='w-full h-full'></div>
           </div>
         </div>
-        <div className='w-full h-svh block relative bg-stone-100/10 backdrop-blur-xl md:col-span-8'>
-          <div className='bg-transparent pointer-events-none h-head'></div>
+        <div className='w-full h-svh block relative bg-stone-950 md:col-span-8'>
+          <div className='pointer-events-none h-head'></div>
           <div className='mt-12 mb-10'>
             <ul className='flex flex-col w-full pointer-events-auto px-8'>
               {links.map((link, index) => (
