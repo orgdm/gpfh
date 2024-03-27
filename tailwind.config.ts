@@ -19,6 +19,10 @@ const config: Config = {
         'main': '1.12146rem',
         'dsm': 'calc(1.25625rem + .075vw)',
         'dmd': 'calc(1.33125rem + .975vw)',
+        '4xl': '2rem',
+        '5xl': '2.6rem',
+        '6xl': '3.4rem',
+        '7xl': '4.2rem'
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -26,7 +30,8 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "overlay": "linear-gradient(rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0) 100%",
         'head': 'linear-gradient(rgba(0, 0, 0, 0.468), rgba(0, 0, 0, 0))',
-        'head-overlay': 'linear-gradient(to top, rgba(0, 0, 0, 0), rgba(10, 10, 10, 0.45))'
+        'head-overlay': 'linear-gradient(to top, rgba(0, 0, 0, 0), rgba(10, 10, 10, 0.45))',
+        'img-overlay': 'linear-gradient(rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0.5))'
       },
       transitionProperty: {
         'head': 'top, background-color'

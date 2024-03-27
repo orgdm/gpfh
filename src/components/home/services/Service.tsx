@@ -1,5 +1,6 @@
 'use client';
 import type { ServiceProps } from '@/types/services';
+import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 
 const Service = ({ img, title, desc, reverse }: ServiceProps) => {
@@ -9,15 +10,17 @@ const Service = ({ img, title, desc, reverse }: ServiceProps) => {
   });
 
   return (
-    <picture ref={ref} className={``}>
-      <div className={`relative object-contain aspect-video h-auto`}>
-        <img
+    <picture ref={ref} className={`rounded-lg shadow-lg`}>
+      <div className={`relative object-contain aspect-[3/2] h-auto`}>
+        <Image
           src={img}
           alt={title}
-          className={`absolute w-full will-change-[opacity] aspect-[3/2] h-full rounded-lg transition-opacity duration-500 origin-center bg-origin-border ease ${
+          fill
+          placeholder='blur'
+          blurDataURL='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
+          className={`overflow-hidden  will-change-[opacity] rounded-lg transition-opacity duration-500 origin-center bg-origin-border ease ${
             inView ? 'opacity-100' : 'opacity-0'
           }`}
-          loading='lazy'
         />
         <div className='h-full w-full flex items-end'>
           <h3

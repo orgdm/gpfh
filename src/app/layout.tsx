@@ -32,7 +32,7 @@ const RootLayout = ({
       lang='en'
       className={`overflow-auto scroll-smooth bg-stone-950 ${openSans.variable} ${lora.variable}`}
     >
-      <body className={'overscroll-none bg-stone-950'}>
+      <body className={'overscroll-none bg-stone-950 font-medium'}>
         <SkipToMain />
         <Header />
         <main
