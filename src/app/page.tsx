@@ -1,20 +1,18 @@
 import MainCarousel from '@/components/home/MainCarousel';
 import Introduction from '@/components/home/Introduction';
-import AllServices from '@/components/home/services/AllServices';
+import ServiceCarousel from '@/components/home/services/ServiceCarousel';
 import Subscribe from '@/components/home/Subscribe';
 // fetch data from s3 and pass into components
 
-export default function Home() {
+const Home = () => {
   return (
     <>
-      <div>
-        <MainCarousel />
-      </div>
+      <MainCarousel />
       <Introduction />
-      <div>
-        <AllServices />
-      </div>
+      <ServiceCarousel />
       <Subscribe />
     </>
   );
-}
+};
+
+export default Home;

@@ -30,9 +30,9 @@ const RootLayout = ({
   return (
     <html
       lang='en'
-      className={`overflow-auto scroll-smooth bg-stone-950 ${openSans.variable} ${lora.variable}`}
+      className={`overflow-auto scroll-smooth  ${openSans.variable} ${lora.variable}`}
     >
-      <body className={'overscroll-none bg-stone-950 font-medium'}>
+      <body className={'overscroll-none  font-medium'}>
         <SkipToMain />
         <Header />
         <main

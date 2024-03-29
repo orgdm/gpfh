@@ -8,17 +8,19 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          'bg-stone-900 text-stone-50 shadow hover:bg-stone-900/90 dark:bg-stone-50 dark:text-stone-900 dark:hover:bg-stone-50/90',
+        default: 'bg-stone-50 text-stone-900 shadow hover:bg-stone-50/90',
         destructive:
           'bg-red-500 text-stone-50 shadow-sm hover:bg-red-500/90 dark:bg-red-900 dark:text-stone-50 dark:hover:bg-red-900/90',
         outline:
           'border shadow-sm border-stone-800 bg-stone-950 hover:bg-stone-800 hover:text-stone-50',
-        secondary: 'shadow-sm bg-stone-800 text-stone-50 hover:bg-stone-800/80',
+        outlineSec:
+          'border border-stone-100 disabled:border-stone-800 hover:border-stone-400 text-stone-100 disabled:text-stone-800 bg-transparent hover:bg-stone-400 hover:text-stone-950 disabled:pointer-events-none',
+        secondary:
+          'shadow-sm bg-stone-800 text-stone-50 hover:bg-stone-800/80 disabled:bg-stone-900',
         ghost: 'hover:bg-stone-800 hover:text-stone-50',
         link: 'underline-offset-4 hover:underline text-stone-50',
-        landing:
-          ' bg-stone-100 hover:transition-[background-color] hover:duration-300 hover:ease-in focus:transition-[background-color] focus:duration-300 focus:ease-in focus:bg-stone-400 hover:bg-stone-400 text-black duration-150 ease-out',
+        navigate:
+          ' bg-stone-100 hover:transition-[background-color] hover:duration-300 hover:ease-in focus:transition-[background-color] focus:duration-300 focus:ease-in focus:bg-stone-400 hover:bg-stone-400 text-black duration-150 ease-out disabled:bg-stone-900',
       },
       size: {
         default: 'h-9 px-4 py-2',
@@ -28,6 +30,7 @@ const buttonVariants = cva(
         sm: 'h-8 rounded-md px-3 text-xs',
         lg: 'h-10 rounded-md px-8',
         icon: 'h-9 w-9',
+        control: 'h-8 w-8',
       },
     },
     defaultVariants: {

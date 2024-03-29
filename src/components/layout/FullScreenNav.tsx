@@ -15,7 +15,7 @@ const links = [
 ];
 
 const baseStyle =
-  'fixed top-0 bottom-0 right-0 w-full transition-transform duration-300 ease-out';
+  'fixed top-0 bottom-0 right-0 w-full transition-[transform] duration-300 ease-out';
 
 const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
   const menu = useRef<HTMLDivElement | null>(null);
@@ -40,17 +40,17 @@ const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
         `${baseStyle}` +
         `${
           open
-            ? ' -translate-x-0 md:translate-y-0 md:translate-x-0 pointer-events-auto opacity-100'
-            : ' translate-x-full md:-translate-y-full md:translate-x-0 pointer-events-none opacity-0'
+            ? ' translate-y-0 pointer-events-auto'
+            : ' -translate-y-full pointer-events-none'
         }`
       }
     >
       <div className='grid grid-rows-1 grid-cols-1 md:grid-rows-[1fr] md:grid-cols-12 relative w-full h-[calc(100vh - 77px)]'>
         <div
           ref={menu}
-          className={`md:w-full hidden md:block md:h-full md:col-span-4 md:bg-head md:backdrop-blur-sm   relative ease-in md:opacity-${
-            open ? '0' : '100'
-          }  md:transition-opacity md:delay-300 md:duration-100`}
+          className={`md:w-full hidden md:block md:h-full md:col-span-4 md:bg-head md:backdrop-blur-sm  md:transition-opacity md:delay-100 md:duration-500  relative ease-out ${
+            open ? 'md:opacity-100' : 'md:opacity-0'
+          } `}
         >
           <div className='w-full h-full'>
             <div className='w-full h-full'></div>
@@ -65,7 +65,13 @@ const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
                   key={index}
                   className='w-full py-2 flex justify-end text-lg font-semibold uppercase tracking-wide'
                 >
-                  <Link onClick={() => setOpen(false)} href={link.href}>
+                  <Link
+                    className={`transition-[opacity,margin] delay-200 duration-300 ${
+                      open ? ' opacity-100' : '  opacity-0'
+                    }`}
+                    onClick={() => setOpen(false)}
+                    href={link.href}
+                  >
                     {link.title}
                   </Link>
                 </li>

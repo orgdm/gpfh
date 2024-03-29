@@ -64,7 +64,6 @@ export function MainCarousel() {
                   fill
                   src={img.bg}
                   alt={img.title}
-                  priority
                   placeholder='blur'
                   blurDataURL='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
                 />
@@ -79,8 +78,8 @@ export function MainCarousel() {
         >
           <div className='flex flex-col justify-center'>
             <Button
-              className='mx-auto pointer-events-auto'
-              variant={'landing'}
+              className='mx-auto pointer-events-auto bg-[rgba(131,131,131,0.31)] backdrop-blur-md'
+              variant={'outlineSec'}
               size={'landing'}
               asChild
             >
