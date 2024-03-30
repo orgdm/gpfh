@@ -86,10 +86,10 @@ const ServiceCarousel = () => {
   }, [api, onSelect]);
 
   return (
-    <section>
+    <>
       <div className='px-8 relative'>
-        <div className='flex w-full my-3 flex-row flex-wrap justify-between items-center'>
-          <h2 className='text-4xl md:text-5xl xl:text-6xl leading-6 md:leading-7 capitalize my-[0.8em] '>
+        <div className='flex w-full flex-row flex-wrap justify-between items-center'>
+          <h2 className='text-4xl md:text-5xl xl:text-6xl leading-6 md:leading-7 capitalize my-[0.93em] '>
             Services
           </h2>
         </div>
@@ -133,6 +133,7 @@ const ServiceCarousel = () => {
             size={'icon'}
           >
             <ArrowLeftIcon className='scale-150 ' />
+            <span className='sr-only'>Previous slide</span>
           </Button>{' '}
           <Button
             className='rounded-full disabled:opacity-0 will-change-[opacity] transition-opacity duration-200  ease-linear absolute -right-2 top-1/3 '
@@ -142,10 +143,11 @@ const ServiceCarousel = () => {
             size={'icon'}
           >
             <ArrowRightIcon className='scale-150' />
+            <span className='sr-only'>Next slide</span>
           </Button>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 

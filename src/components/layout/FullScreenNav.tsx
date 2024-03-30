@@ -9,9 +9,11 @@ type FullScreenNavProps = {
 
 const links = [
   { title: 'home', href: '/' },
-  { title: 'about', href: '/about' },
   { title: 'projects', href: '/projects' },
+  { title: 'about', href: '/about' },
+  { title: 'people', href: '/people' },
   { title: 'contact', href: '/contact' },
+  { title: 'newsletter', href: '/newsletter' },
 ];
 
 const baseStyle =
@@ -63,7 +65,7 @@ const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
               {links.map((link, index) => (
                 <li
                   key={index}
-                  className='w-full py-2 flex justify-end text-lg font-semibold uppercase tracking-wide'
+                  className='w-full py-3 flex justify-end text-lg font-semibold uppercase tracking-wide'
                 >
                   <Link
                     className={`transition-[opacity,margin] delay-200 duration-300 ${

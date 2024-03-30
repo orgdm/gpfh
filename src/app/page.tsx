@@ -10,6 +10,7 @@ const Home = () => {
       <MainCarousel />
       <Introduction />
       <ServiceCarousel />
+      {/* GREEN FOCUS */}
       <Subscribe />
     </>
   );

@@ -7,15 +7,21 @@ import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 
 const formSchema = z.object({
+  firstName: z
+    .string()
+    .min(1, { message: 'This field has to be filled.' })
+    .max(50),
+  lastName: z
+    .string()
+    .min(1, { message: 'This field has to be filled.' })
+    .max(80),
   email: z
     .string()
     .min(1, { message: 'This field has to be filled.' })
@@ -27,11 +33,13 @@ const formSchema = z.object({
   // }, "This email is not in our database")
 });
 
-const NewsletterHome = () => {
+const Newsletter = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: '',
+      firstName: '',
+      lastName: '',
     },
   });
 
@@ -42,22 +50,16 @@ const NewsletterHome = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-10'>
+      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
         <FormField
           control={form.control}
-          name='email'
+          name='firstName'
           render={({ field }) => (
             <FormItem>
-              <FormDescription className='py-1'>
-                Subscribe with your email to keep up with our latest updates
-              </FormDescription>
-              <div className='pb-2 pt-1'>
-                <FormLabel>Email sign-up</FormLabel>
-              </div>
               <FormControl>
                 <Input
                   className='border-b border-stone-700'
-                  placeholder='Email'
+                  placeholder='first name*'
                   {...field}
                 />
               </FormControl>
@@ -65,12 +67,45 @@ const NewsletterHome = () => {
             </FormItem>
           )}
         />
+        <FormField
+          control={form.control}
+          name='lastName'
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input
+                  className='border-b border-stone-700'
+                  placeholder='last name*'
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='email'
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input
+                  className='border-b border-stone-700'
+                  placeholder='email*'
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
         <Button className='w-full' size={'sub'} type='submit'>
-          Subscribe
+          sign up
         </Button>
       </form>
     </Form>
   );
 };
 
-export default NewsletterHome;
+export default Newsletter;

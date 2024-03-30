@@ -12,45 +12,36 @@ const Introduction = () => {
   });
 
   return (
-    <div className='px-8 mx-auto lg:mx-auto xl:max-w-[1160px] py-14'>
-      <div ref={ref} className='flex flex-row max-lg:flex-wrap gap-x-10 h-full'>
-        <div className='basis-full lg:basis-[60%] flex-shrink-0 flex-grow-0 w-full h-full'>
+    <div className='px-8 mx-auto md:px-12 lg:mx-auto xl:max-w-[1160px] py-14'>
+      <div
+        ref={ref}
+        className={`flex flex-row max-lg:flex-wrap gap-x-10 h-full transition-[transform,opacity] delay-75 ease-in duration-200  ${
+          inView ? 'translate-y-0 opacity-100' : 'translate-y-[6%] opacity-0'
+        }`}
+      >
+        <div className='basis-full lg:basis-[62%] flex-shrink-0 flex-grow-0 w-full h-full'>
           <div>
             <picture className='w-full h-full'>
-              <div className='relative object-contain rounded-sm aspect-[9/5]'>
+              <div className='relative rounded-sm aspect-[7/4]'>
                 <Image
                   src={'/gpfh1.jpg'}
                   fill
-                  className={`overflow-hidden rounded-sm transition-[transform,opacity] duration-300 ease  ${
-                    inView
-                      ? ' transform-y-0 ease opacity-100'
-                      : ' translate-y-[5%] opacity-0'
-                  }`}
+                  className={`object-contain overflow-hidden aspect-[9/5]`}
                   alt='sample of work'
-                  // placeholder='blur'
-                  // blurDataURL='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
+                  placeholder='blur'
+                  blurDataURL='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
                 />
               </div>
             </picture>
           </div>
         </div>
         <div className='block basis-auto flex-shrink-1 flex-grow-0'>
-          <div
-            className={`my-[0.9em] transition-opacity will-change-[opacity] duration-300 ${
-              inView ? ' opacity-100' : ' opacity-0'
-            }`}
-          >
+          <div className={`my-[0.9em] `}>
             <h2 className='text-4xl md:text-5xl xl:text-6xl leading-6 md:leading-7 capitalize my-[0.8em] '>
               Who We Are
             </h2>
           </div>
-          <div
-            className={`will-change-[opacity] transition-all delay-200 ease ${
-              inView
-                ? ' translate-y-0 opacity-100 ease duration-500'
-                : ' translate-y-16 opacity-0'
-            }`}
-          >
+          <div className={``}>
             <p className='font-light my-[1em] md:text-lg leading-7 md:leading-8 lg:leading-9'>
               Grove Park Fine Homes builds luxury homes in the Asheville, North
               Carolina area. We relentlessly pursue perfection in every aspect
