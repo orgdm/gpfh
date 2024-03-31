@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react';
 import FullScreenNav from './FullScreenNav';
 
 const openBtnStyle =
-  'before:top-[14px] before:rotate-45 after:bottom-[14px] after:-rotate-45';
+  'before:top-[14px] before:rotate-45 after:bottom-[14px] after:-rotate-45  ';
 const closedBtnStyle = 'before:top-[10px] after:bottom-[10px]';
 const baseBtnStyle =
-  'relative h-[30px] w-[30px] p-[10px] appearance-none bg-transparent border-none cursor-pointer before:absolute after:absolute before:block after:block before:bg-white after:bg-white before:w-[25px] after:w-[25px] before:h-[2px] after:h-[2px] before:left-[2px] after:left-[2px] before:right-[2px] after:right-[2px] before:transition after:transition before:origin-center after:origin-center before:ease-linear after:ease-linear before:transition-all after:transition-all before:duration-300 after:duration-300 ';
+  'relative h-[30px] w-[30px] p-[10px] appearance-none bg-transparent border-none cursor-pointer before:absolute after:absolute before:block after:block before:bg-white after:bg-white before:w-[25px] after:w-[25px] before:h-[2px] after:h-[2px] before:left-[2px] after:left-[2px] before:right-[2px] after:right-[2px] before:transition-[transform] after:transition-[transform] before:ease-linear after:ease-linear before:duration-300 after:duration-300 ';
 
 const links = [
   { title: 'projects', href: '/projects' },
@@ -63,12 +63,12 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed z-50 left-0 right-0 bottom-auto transition-[top] duration-150 ease-out bg-scroll ${
-          scrollDir > 0 ? 'top-0' : '-top-20'
+        className={`fixed z-50 left-0 right-0 top-0 bottom-auto transition-[transform] duration-200 ease-in-out bg-scroll ${
+          scrollDir > 0 ? ' translate-y-0' : ' -translate-y-full'
         }`}
       >
         <div
-          className={`relative px-4 h-head transition-[background-color] duration-300 ease-in ${
+          className={`relative  px-4 h-head transition-[background-color] duration-500 ease-in ${
             scrollDir < 2 ? 'bg-stone-950' : 'bg-head-overlay'
           }`}
         >
@@ -82,7 +82,9 @@ const Header = () => {
             <ul className='flex items-center xl:hidden'>
               <li
                 id='menuToggleOuter'
-                className='w-[48px] h-[48px] z-[100] flex  items-center justify-end pointer-events-auto no-underline text-white aspect-square'
+                // rotate both clockwise until top line is diagonal from top left to bottom right diagonal (300) then stop it
+                // continue rotating bottom line until X is formed (60)
+                className='w-[48px] h-[48px] z-[100] flex rota  items-center justify-end pointer-events-auto no-underline text-white aspect-square'
               >
                 <button
                   className={

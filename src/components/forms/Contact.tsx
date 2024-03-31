@@ -2,19 +2,22 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-
 import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import { Textarea } from '../ui/textarea';
 
 const formSchema = z.object({
+  subject: z
+    .string()
+    .min(3, { message: 'This field has to be filled.' })
+    .max(80, { message: 'Subject too long, move to details' }),
   firstName: z
     .string()
     .min(1, { message: 'This field has to be filled.' })
@@ -27,17 +30,136 @@ const formSchema = z.object({
     .string()
     .min(1, { message: 'This field has to be filled.' })
     .email('Please enter a valid email.'),
-  subject: z.string(),
-  details: z.string(),
-  // .refine(async (e) => {
-  //   // Where checkIfEmailIsValid makes a request to the backend
-  //   // to see if the email is valid.
-  //   return await checkIfEmailIsValid(e);
-  // }, "This email is not in our database")
+  organization: z.string().max(300, { message: 'Please abbreviate' }),
+  details: z
+    .string()
+    .min(3, { message: 'This field has to be filled.' })
+    .max(500, { message: 'Message too long' }),
 });
 
 const Contact = () => {
-  return <div>Contact</div>;
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      subject: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      organization: '',
+      details: '',
+    },
+  });
+
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    console.log(values);
+    // send to AWS SES
+  };
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
+        <FormField
+          control={form.control}
+          name='subject'
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input
+                  className='border-b border-stone-700'
+                  placeholder='subject*'
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='firstName'
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input
+                  className='border-b border-stone-700'
+                  placeholder='first name*'
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='lastName'
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input
+                  className='border-b border-stone-700'
+                  placeholder='last name*'
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='email'
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input
+                  className='border-b border-stone-700'
+                  placeholder='email*'
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='organization'
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input
+                  className='border-b border-stone-700'
+                  placeholder='organization / company'
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='details'
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Textarea
+                  placeholder='details*'
+                  className='resize-none border-stone-700'
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button className='w-full' size={'sub'} type='submit'>
+          send
+        </Button>
+      </form>
+    </Form>
+  );
 };
 
 export default Contact;

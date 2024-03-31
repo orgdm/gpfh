@@ -17,7 +17,7 @@ const links = [
 ];
 
 const baseStyle =
-  'fixed top-0 bottom-0 right-0 w-full transition-[transform] duration-300 ease-out';
+  'fixed top-0 bottom-auto right-0 w-full transition-[transform] duration-300 ease-out';
 
 const FullScreenNav = ({ open, setOpen }: FullScreenNavProps) => {
   const menu = useRef<HTMLDivElement | null>(null);

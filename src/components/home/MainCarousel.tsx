@@ -28,7 +28,7 @@ const imgs = [
   },
 ];
 
-export function MainCarousel() {
+export const MainCarousel = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
@@ -72,7 +72,7 @@ export function MainCarousel() {
           ))}
         </CarouselContent>
         <div
-          className={`absolute bottom-7 w-full z-10 transition-opacity ${
+          className={`absolute bottom-7 w-full z-10 transition-opacity duration-300 ${
             api ? 'opacity-100' : 'opacity-0'
           }`}
         >
@@ -109,6 +109,6 @@ export function MainCarousel() {
       </Carousel>
     </>
   );
-}
+};
 
 export default MainCarousel;

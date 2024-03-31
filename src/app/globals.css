@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap'); */
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -19,14 +17,15 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-  /* font-family: ''; */
+  color: #fff;
+  background-color: #0c0a09;
+}
+
+@layer utilities {
+  .min-h-scr {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
 }
 
 @layer utilities {

@@ -1,5 +1,5 @@
-import type { Metadata } from 'next';
-import { Open_Sans, Domine } from 'next/font/google';
+import type { Metadata, Viewport } from 'next';
+import { Open_Sans } from 'next/font/google';
 import './globals.css';
 import SkipToMain from '@/components/layout/SkipToMain';
 import Header from '@/components/layout/Header';
@@ -10,16 +10,18 @@ const openSans = Open_Sans({
   variable: '--font-open-sans',
 });
 
-const lora = Domine({
-  subsets: ['latin'],
-  variable: '--font-lora',
-  weight: ['400', '500', '600', '700'],
-});
-
 export const metadata: Metadata = {
   title: 'Grove Park Fine Homes',
   description:
     'Grove Park Fine Homes builds luxury homes in the Asheville, North Carolina area.',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: '#0c0a09',
 };
 
 const RootLayout = ({
@@ -30,15 +32,12 @@ const RootLayout = ({
   return (
     <html
       lang='en'
-      className={`overflow-auto scroll-smooth  ${openSans.variable} ${lora.variable}`}
+      className={`overscroll-none overflow-auto scroll-smooth  ${openSans.variable}`}
     >
-      <body className={'overscroll-none  font-medium'}>
+      <body className={' overscroll-none font-medium'}>
         <SkipToMain />
         <Header />
-        <main
-          id='mainContent'
-          className={`bg-stone-950 min-h-fullscr font-sans`}
-        >
+        <main id='mainContent' className={`min-h-scr font-sans bg-stone-950`}>
           {children}
         </main>
         <Footer />

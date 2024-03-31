@@ -1,12 +1,12 @@
+import ContactCard from '@/components/contact/ContactCard';
+
 const Contact = () => {
   return (
-    <>
-      <div className='min-h-svh flex justify-center items-center'>
-        <span className='font-semibold text-2xl tracking-wider'>
-          <h3>CONTACT</h3>
-        </span>
+    <div className='py-8 h-[inherit]'>
+      <div className=' min-h-scr flex justify-center items-center'>
+        <ContactCard />
       </div>
-    </>
+    </div>
   );
 };
 
