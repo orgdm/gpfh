@@ -18,7 +18,7 @@ const buttonVariants = cva(
         secondary:
           'shadow-sm bg-stone-800 text-stone-50 hover:bg-stone-800/80 disabled:bg-stone-900',
         ghost: 'hover:bg-stone-800 hover:text-stone-50',
-        link: 'underline-offset-4 hover:underline text-stone-50',
+        link: 'text-stone-50 hover:text-stone-200 transition-[color] duration-300 ease hover:ease-in',
         navigate:
           ' bg-stone-100 hover:transition-[background-color] hover:duration-300 hover:ease-in focus:transition-[background-color] focus:duration-300 focus:ease-in focus:bg-stone-400 hover:bg-stone-400 text-black duration-150 ease-out disabled:bg-stone-900',
       },

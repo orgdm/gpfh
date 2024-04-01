@@ -3,7 +3,7 @@ import { Open_Sans } from 'next/font/google';
 import './globals.css';
 import SkipToMain from '@/components/layout/SkipToMain';
 import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
+import Footer from '@/components/layout/footer/Footer';
 
 const openSans = Open_Sans({
   subsets: ['latin'],
@@ -11,9 +11,8 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Grove Park Fine Homes',
-  description:
-    'Grove Park Fine Homes builds luxury homes in the Asheville, North Carolina area.',
+  title: 'Next App',
+  description: 'create next app',
 };
 
 export const viewport: Viewport = {
@@ -21,7 +20,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: '#0c0a09',
+  themeColor: '#1c1917',
 };
 
 const RootLayout = ({

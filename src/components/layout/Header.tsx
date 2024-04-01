@@ -69,7 +69,7 @@ const Header = () => {
       >
         <div
           className={`relative  px-4 h-head transition-[background-color] duration-500 ease-in ${
-            scrollDir < 2 ? 'bg-stone-950' : 'bg-head-overlay'
+            scrollDir < 2 ? 'bg-stone-900' : 'bg-head-overlay'
           }`}
         >
           <div
