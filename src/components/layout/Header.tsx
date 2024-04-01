@@ -1,13 +1,10 @@
 'use client';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import FullScreenNav from './FullScreenNav';
-
-const openBtnStyle =
-  'before:top-[14px] before:rotate-45 after:bottom-[14px] after:-rotate-45  ';
-const closedBtnStyle = 'before:top-[10px] after:bottom-[10px]';
-const baseBtnStyle =
-  'relative h-[30px] w-[30px] p-[10px] appearance-none bg-transparent border-none cursor-pointer before:absolute after:absolute before:block after:block before:bg-white after:bg-white before:w-[25px] after:w-[25px] before:h-[2px] after:h-[2px] before:left-[2px] after:left-[2px] before:right-[2px] after:right-[2px] before:transition-[transform] after:transition-[transform] before:ease-linear after:ease-linear before:duration-300 after:duration-300 ';
+import HomeLinkLogo from './header/HomeLinkLogo';
+import ToggleBtn from './navmenu/ToggleBtn';
+import FullScreenNav from './navmenu/FullScreenNav';
+import CloseOnClick from './navmenu/CloseOnClick';
 
 const links = [
   { title: 'projects', href: '/projects' },
@@ -63,52 +60,38 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed z-50 left-0 right-0 top-0 bottom-auto transition-[transform] duration-200 ease-in-out bg-scroll ${
+        className={`fixed z-50 left-0 right-0 top-0 bottom-auto transition-[transform] duration-300 ease-head bg-scroll ${
           scrollDir > 0 ? ' translate-y-0' : ' -translate-y-full'
         }`}
       >
         <div
-          className={`relative  px-4 h-head transition-[background-color] duration-500 ease-in ${
+          className={`relative  px-4 h-head transition-[background-color] delay-75 duration-700 ease-in ${
             scrollDir < 2 ? 'bg-stone-900' : 'bg-head-overlay'
           }`}
         >
-          <div
-            style={{ textShadow: 'rgba(0, 0, 0, 0.004) 1px 1px 1px' }}
-            className='flex w-full h-full flex-row justify-between xl:grid xl:grid-cols-12 xl:grid-rows-1'
-          >
+          <div className='flex w-full h-full flex-row justify-between xl:grid xl:grid-cols-12 xl:grid-rows-1'>
             <div className='flex items-center list-none relative xl:col-start-1 xl:col-end-3'>
-              <Link href={'/'}>logo</Link>
+              <HomeLinkLogo />
             </div>
-            <ul className='flex items-center xl:hidden'>
-              <li
-                id='menuToggleOuter'
-                // rotate both clockwise until top line is diagonal from top left to bottom right diagonal (300) then stop it
-                // continue rotating bottom line until X is formed (60)
-                className='w-[48px] h-[48px] z-[100] flex rota  items-center justify-end pointer-events-auto no-underline text-white aspect-square'
-              >
-                <button
-                  className={
-                    `${baseBtnStyle}` +
-                    `${menuOpen ? openBtnStyle : closedBtnStyle}`
-                  }
-                  onClick={handleMenu}
-                ></button>
-              </li>
-            </ul>
+            <ToggleBtn open={menuOpen} setOpen={setMenuOpen} />
             <ul className='hidden xl:col-start-3 xl:col-end-7 xl:flex xl:items-center xl:justify-evenly'>
               {links.slice(0, 4).map((link, index) => (
                 <li
                   className='capitalize tracking-wider font-light'
                   key={index}
                 >
-                  <Link href={link.href}>{link.title}</Link>
+                  <Link className='link' href={link.href}>
+                    <span>{link.title}</span>
+                  </Link>
                 </li>
               ))}
             </ul>
             <ul className='hidden xl:col-start-9 xl:col-end-13 xl:flex xl:items-center xl:justify-self-end xl:justify-evenly'>
               {links.slice(4, 6).map((link, index) => (
                 <li className='me-6 tracking-wider font-light' key={index}>
-                  <Link href={link.href}>{link.title}</Link>
+                  <Link className='link capitalize' href={link.href}>
+                    {link.title}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -116,6 +99,9 @@ const Header = () => {
         </div>
         <div className='block xl:hidden'>
           <FullScreenNav setOpen={setMenuOpen} open={menuOpen} />
+        </div>
+        <div className='hidden md:block xl:hidden'>
+          <CloseOnClick setOpen={setMenuOpen} open={menuOpen} />
         </div>
       </header>
     </>

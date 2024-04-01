@@ -57,7 +57,7 @@ export const MainCarousel = () => {
       >
         <CarouselContent>
           {imgs.map((img, index) => (
-            <CarouselItem key={index}>
+            <CarouselItem className='p-0' key={index}>
               <div className={`relative h-svh`}>
                 <Image
                   className='object-cover object-center overflow-hidden'
@@ -71,11 +71,7 @@ export const MainCarousel = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div
-          className={`absolute bottom-7 w-full z-10 transition-opacity duration-300 ${
-            api ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
+        <div className={`absolute bottom-7 w-full z-10`}>
           <div className='flex flex-col justify-center'>
             <Button
               className='mx-auto pointer-events-auto bg-[rgba(131,131,131,0.31)] backdrop-blur-md'
@@ -98,8 +94,10 @@ export const MainCarousel = () => {
                 <span
                   key={index}
                   onClick={() => api && api.scrollTo(index)}
-                  className={`inline-block rounded-full border h-3 w-3 outline-white mx-2 ${
-                    index + 1 === current ? 'bg-white' : 'bg-stone-100/10'
+                  className={`inline-block cursor-pointer rounded-full border h-3 w-3 outline-white mx-2 ${
+                    index + 1 === current
+                      ? 'bg-white'
+                      : 'bg-[rgba(131,131,131,0.31)] backdrop-blur-md'
                   }`}
                 />
               ))}

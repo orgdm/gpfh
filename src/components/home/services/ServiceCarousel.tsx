@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
-import type { ServiceProps } from '@/types/services';
+import type { ServiceProps } from '@/types/home';
 
 import {
   Carousel,

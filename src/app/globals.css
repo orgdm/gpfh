@@ -29,7 +29,36 @@ body {
 }
 
 @layer utilities {
+  .link {
+    position: relative;
+  }
+  .link::after {
+    height: 1px;
+    position: absolute;
+    left: 0;
+    top: 1.75rem;
+    width: 0;
+    background-color: #fff;
+    content: '';
+    transition-property: width;
+    transition-duration: 300ms;
+    transition-delay: 0ms;
+    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
+  .link:hover::after {
+    content: '';
+    width: 100%;
+  }
+}
+
+@layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .ease-head {
+    transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
   }
 }
