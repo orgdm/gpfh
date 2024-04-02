@@ -28,7 +28,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    const thresh = 3;
+    const thresh = 2;
     let lastY: number = window.scrollY;
     let ticking: boolean = false;
 
