@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Open_Sans } from 'next/font/google';
+import { Open_Sans, Roboto } from 'next/font/google';
 import './globals.css';
 import SkipToMain from '@/components/layout/SkipToMain';
 import Header from '@/components/layout/Header';
@@ -8,6 +8,12 @@ import Footer from '@/components/layout/footer/Footer';
 const openSans = Open_Sans({
   subsets: ['latin'],
   variable: '--font-open-sans',
+});
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  variable: '--font-roboto',
+  weight: ['100', '300', '400', '500', '700', '900'],
 });
 
 export const metadata: Metadata = {
@@ -31,7 +37,7 @@ const RootLayout = ({
   return (
     <html
       lang='en'
-      className={`overscroll-none overflow-auto scroll-smooth  ${openSans.variable}`}
+      className={`overscroll-none overflow-auto scroll-smooth ${roboto.variable} ${openSans.variable}`}
     >
       <body className={' overscroll-none font-medium'}>
         <SkipToMain />

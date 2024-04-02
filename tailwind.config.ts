@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         'sans': ['var(--font-open-sans)', 'sans-serif'],
+        'robo': ['var(--font-roboto)', 'sans-serif'],
         'serif': ['ui-serif', 'Georgia'],
         'mono': ['ui-monospace', 'SFMono-Regular'],
         'display': ['Oswald'],

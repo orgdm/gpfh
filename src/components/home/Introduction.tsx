@@ -12,7 +12,7 @@ const Introduction = () => {
   });
 
   return (
-    <div className='px-8 mx-auto md:px-12 lg:mx-auto xl:max-w-[1160px] py-14'>
+    <div className='px-8 mx-auto md:px-12 lg:mx-auto xl:max-w-[1260px] py-14'>
       <div
         ref={ref}
         className={`flex flex-row max-lg:flex-wrap gap-x-10 h-full transition-[transform,opacity] delay-75 ease-in duration-200  ${

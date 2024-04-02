@@ -83,7 +83,7 @@ export const MainCarousel = () => {
                 href={'/projects'}
                 className='max-w-[600px] flex flex-row justify-between'
               >
-                <span className='me-6 font-medium text-main'>
+                <span className='me-6 font-normal text-main'>
                   View Projects
                 </span>
                 <CaretRightIcon width={30} height={30} />
