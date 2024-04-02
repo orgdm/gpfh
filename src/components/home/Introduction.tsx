@@ -2,6 +2,7 @@
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
+import Heading from '../layout/Heading';
 import { CaretRightIcon } from '@radix-ui/react-icons';
 import { useInView } from 'react-intersection-observer';
 
@@ -36,12 +37,8 @@ const Introduction = () => {
           </div>
         </div>
         <div className='block basis-auto flex-shrink-1 flex-grow-0'>
-          <div className={`my-[0.9em] `}>
-            <h2 className='text-4xl md:text-5xl xl:text-6xl leading-6 md:leading-7 capitalize my-[0.8em] '>
-              Who We Are
-            </h2>
-          </div>
-          <div className={``}>
+          <Heading title='Who We Are' />
+          <div>
             <p className='font-light my-[1em] md:text-lg leading-7 md:leading-8 lg:leading-9'>
               Grove Park Fine Homes builds luxury homes in the Asheville, North
               Carolina area. We relentlessly pursue perfection in every aspect

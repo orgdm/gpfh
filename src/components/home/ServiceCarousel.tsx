@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
+import Heading from '../layout/Heading';
 import type { ServiceProps } from '@/types/home';
 
 import {
@@ -88,11 +89,7 @@ const ServiceCarousel = () => {
   return (
     <>
       <div className='px-8 relative'>
-        <div className='flex w-full flex-row flex-wrap justify-between items-center'>
-          <h2 className='text-4xl md:text-5xl xl:text-6xl leading-6 md:leading-7 capitalize my-[0.93em] '>
-            Services
-          </h2>
-        </div>
+        <Heading title='Services' />
         <div className='relative'>
           <Carousel
             setApi={setApi}

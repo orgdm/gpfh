@@ -1,6 +1,6 @@
 import MainCarousel from '@/components/home/MainCarousel';
 import Introduction from '@/components/home/Introduction';
-import ServiceCarousel from '@/components/home/services/ServiceCarousel';
+import ServiceCarousel from '@/components/home/ServiceCarousel';
 import Subscribe from '@/components/home/Subscribe';
 
 const Home = () => {

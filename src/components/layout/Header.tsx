@@ -19,13 +19,13 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [scrollDir, setScrollDir] = useState<number>(2);
 
-  const handleMenu = (
-    event: React.MouseEvent<
-      HTMLButtonElement | HTMLAnchorElement | HTMLDivElement
-    >
-  ): void => {
-    setMenuOpen(!menuOpen);
-  };
+  // const handleMenu = (
+  //   event: React.MouseEvent<
+  //     HTMLButtonElement | HTMLAnchorElement | HTMLDivElement
+  //   >
+  // ): void => {
+  //   setMenuOpen(!menuOpen);
+  // };
 
   useEffect(() => {
     const thresh = 2;
