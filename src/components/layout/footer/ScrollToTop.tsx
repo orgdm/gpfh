@@ -8,7 +8,7 @@ const BackToTop = () => {
         className='flex flex-row items-center'
         onClick={() => window.scrollTo(0, 0)}
       >
-        <span className='me-2'>back to top</span> <ArrowUpIcon />
+        <span className='me-2'>scroll to top</span> <ArrowUpIcon />
       </button>
     </div>
   );
