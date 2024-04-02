@@ -3,7 +3,9 @@ import Link from 'next/link';
 const HomeLinkLogo = () => {
   return (
     <>
-      <Link href={'/'}>LOGO</Link>
+      <Link className='text-lg' href={'/'}>
+        LOGO
+      </Link>
     </>
   );
 };
