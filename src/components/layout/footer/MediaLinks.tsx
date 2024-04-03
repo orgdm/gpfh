@@ -7,15 +7,15 @@ import {
 
 const MediaLinks = () => {
   return (
-    <div className='py-2'>
-      <ul className='flex flex-row flex-wrap gap-x-2 gap-y-1'>
-        <li className='cursor-pointer rounded-full bg-stone-600 ring-1 ring-stone-600 p-2 translate-y-0 hover:-translate-y-1 transition-transform '>
+    <div className='mt-auto'>
+      <ul className='footer-links'>
+        <li className='media-icon ring-1 ring-stone-600'>
           <LinkedInLogoIcon className='scale-125' />
         </li>
-        <li className='cursor-pointer rounded-full bg-stone-600 ring-1 ring-stone-600 p-2 translate-y-0 hover:-translate-y-1 transition-transform '>
+        <li className='media-icon ring-1 ring-stone-600'>
           <TwitterLogoIcon className='scale-125' />
         </li>
-        <li className='cursor-pointer rounded-full bg-stone-600 ring-1 ring-stone-600 p-2 translate-y-0 hover:-translate-y-1 transition-transform '>
+        <li className='media-icon ring-1 ring-stone-600'>
           <InstagramLogoIcon className='scale-125' />
         </li>
       </ul>

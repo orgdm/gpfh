@@ -35,14 +35,11 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html
-      lang='en'
-      className={`overscroll-none overflow-auto scroll-smooth ${roboto.variable} ${openSans.variable}`}
-    >
-      <body className={' overscroll-none font-medium'}>
+    <html lang='en' className={`${roboto.variable} ${openSans.variable}`}>
+      <body>
         <SkipToMain />
         <Header />
-        <main id='mainContent' className={`min-h-scr font-sans bg-stone-950`}>
+        <main id='mainContent' className='font-sans bg-stone'>
           {children}
         </main>
         <Footer />

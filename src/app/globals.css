@@ -6,6 +6,10 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --950: rgb(12, 10, 9);
+  --900: rgb(28, 25, 23);
+
+  --600: rgb(87, 83, 78);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,9 +20,28 @@
   }
 }
 
+html {
+  overscroll-behavior: none;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
 body {
   color: #fff;
-  background-color: #0c0a09;
+  background-color: var(--950);
+  overscroll-behavior: none;
+  font-weight: 500;
+}
+
+main {
+  background-color: var(--950);
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+footer {
+  background-color: var(--900);
+  padding: 1rem;
 }
 
 @layer utilities {
@@ -60,5 +83,75 @@ body {
 @layer utilities {
   .ease-head {
     transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+}
+
+@layer utilities {
+  .skip-nav {
+    padding: 0.5rem;
+    pointer-events: auto;
+    color: #000;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: -5rem;
+    overflow: hidden;
+    border-bottom-right-radius: 1.25rem;
+    transition-property: top;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    z-index: 150;
+  }
+  .skip-nav:focus {
+    top: 0;
+    transition-property: top;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+  }
+}
+
+@layer utilities {
+  .footer-grid {
+    min-height: 12rem;
+    display: grid;
+    grid-template-rows: repeat(3, minmax(0, 1fr)) 1fr;
+    grid-template-columns: 1fr;
+  }
+  .footer-row-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .footer-row-2 {
+    margin-block: 0.5em;
+  }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+    column-gap: 1rem;
+  }
+  .media-icon {
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 9999px;
+    background-color: var(--600);
+    transform: translateY(0px);
+    transition-property: transform;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .media-icon:hover {
+    transform: translateY(-0.25rem);
+  }
+  .cr-wrap {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    flex-shrink: 0;
   }
 }
