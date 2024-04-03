@@ -110,7 +110,7 @@ footer {
   }
 }
 
-@layer utilities {
+/* @layer utilities {
   .footer-grid {
     min-height: 12rem;
     display: grid;
@@ -154,4 +154,4 @@ footer {
     flex-grow: 1;
     flex-shrink: 0;
   }
-}
+} */
