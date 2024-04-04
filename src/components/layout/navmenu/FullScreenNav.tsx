@@ -11,7 +11,7 @@ const FullScreenNav = memo(function FullScreenNav({
   setOpen,
 }: FullScreenNavProps) {
   return (
-    <div
+    <nav
       className={
         `${baseStyle}` +
         `${
@@ -26,12 +26,12 @@ const FullScreenNav = memo(function FullScreenNav({
           <div
             className={`w-full md:w-[45%] z-20 bg-stone-900 pointer-events-auto`}
           >
-            <div className='mt-[96px] mb-10'>
-              <ul className='flex flex-col w-full pointer-events-auto px-8'>
+            <div className='mt-[9em] mb-10'>
+              <menu className='flex flex-col w-full pointer-events-auto px-8'>
                 {pageLinks.map((link, index) => (
                   <li
                     key={index}
-                    className='w-full py-3 flex justify-end text-lg font-semibold uppercase tracking-wide'
+                    className='w-full py-3 flex justify-end text-xl font-light uppercase font-archivo tracking-wider'
                   >
                     <Link
                       className={`transition-[opacity] delay-200 duration-300 link  ${
@@ -44,12 +44,12 @@ const FullScreenNav = memo(function FullScreenNav({
                     </Link>
                   </li>
                 ))}
-              </ul>
+              </menu>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 });
 
