@@ -29,14 +29,14 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install Yarn
-        run: npm install -g yarn
+      # - name: Install Yarn
+      #   run: npm install -g yarn
 
       - name: Install deps
-        run: yarn install --frozen-lockfile
+        run: npm ci --cache .npm
 
       - name: Build
-        run: yarn build
+        run: npm run build
 
       - name: Configure AWS Creds
         uses: aws-actions/configure-aws-credentials@v4

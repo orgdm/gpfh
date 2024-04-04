@@ -4,7 +4,9 @@ const withBundleAnalyzer = NextBundleAnalyzer({
 });
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+export const nextConfig = {
+  basePath: '',
+  distDir: 'out',
   output: 'export',
   images: {
     loader: 'custom',
