@@ -19,6 +19,7 @@ const ToggleBtn = memo(function ToggleBtn({
           className='w-[48px] h-[48px] z-[100] flex items-center justify-end pointer-events-auto no-underline   aspect-square'
         >
           <button
+            aria-label='Toggle Menu'
             className={
               `${baseBtnStyle}` + `${open ? openBtnStyle : closedBtnStyle}`
             }

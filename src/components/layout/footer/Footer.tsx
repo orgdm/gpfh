@@ -26,7 +26,7 @@ const Footer = () => {
           <MediaLinks />
           <div>
             <div className='flex justify-center h-full flex-grow-1 flex-shrink-0'>
-              <p className='text-sm text-stone-500 mt-auto'>
+              <p className='text-sm text-stone-400 mt-auto'>
                 &#169; 2024 Grove Park Fine Homes
               </p>
             </div>
