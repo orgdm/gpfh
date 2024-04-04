@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import HomeLinkLogo from './header/HomeLinkLogo';
+import HomeLinkLogo from './HomeLinkLogo';
 import ToggleBtn from './navmenu/ToggleBtn';
 import FullScreenNav from './navmenu/FullScreenNav';
 import CloseOnClick from './navmenu/CloseOnClick';

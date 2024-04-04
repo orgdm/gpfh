@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import MediaLinks from './MediaLinks';
 import { pageLinks } from '@/lib/misc';
-import BackToTop from './ScrollToTop';
+import BackToTop from './BackToTop';
 
 const Footer = () => {
   return (
