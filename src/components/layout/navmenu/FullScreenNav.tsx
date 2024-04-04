@@ -16,13 +16,13 @@ const FullScreenNav = memo(function FullScreenNav({
         `${baseStyle}` +
         `${
           open
-            ? ' translate-y-0 pointer-events-auto'
-            : ' -translate-y-full pointer-events-none'
+            ? ' translate-y-0 pointer-events-auto overflow-hidden'
+            : ' -translate-y-full pointer-events-none overflow-auto'
         }`
       }
     >
       <div className='relative'>
-        <div className='w-full h-svh flex justify-end relative pointer-events-none'>
+        <div className='w-full min-h-scr flex justify-end relative pointer-events-none'>
           <div
             className={`w-full md:w-[45%] z-20 bg-stone-900 pointer-events-auto`}
           >

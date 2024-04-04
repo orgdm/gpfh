@@ -22,7 +22,6 @@
 
 html {
   overscroll-behavior: none;
-  overflow: auto;
   scroll-behavior: smooth;
 }
 
@@ -31,6 +30,14 @@ body {
   background-color: var(--950);
   overscroll-behavior: none;
   font-weight: 500;
+}
+
+body[data-scroll='n'] {
+  overflow-y: hidden;
+}
+
+body[data-scroll='y'] {
+  overflow-y: auto;
 }
 
 main {
@@ -59,14 +66,14 @@ footer {
     height: 1px;
     position: absolute;
     left: 0;
-    top: 1.75rem;
+    top: 1.7rem;
     width: 0;
     background-color: #fff;
     content: '';
     transition-property: width;
-    transition-duration: 300ms;
+    transition-duration: 200ms;
     transition-delay: 0ms;
-    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .link:hover::after {
     content: '';
@@ -83,6 +90,9 @@ footer {
 @layer utilities {
   .ease-head {
     transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+  .ease-head-overlay {
+    transition-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335);
   }
 }
 

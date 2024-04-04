@@ -19,13 +19,11 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [scrollDir, setScrollDir] = useState<number>(2);
 
-  // const handleMenu = (
-  //   event: React.MouseEvent<
-  //     HTMLButtonElement | HTMLAnchorElement | HTMLDivElement
-  //   >
-  // ): void => {
-  //   setMenuOpen(!menuOpen);
-  // };
+  useEffect(() => {
+    menuOpen
+      ? document.body.setAttribute('data-scroll', 'n')
+      : document.body.setAttribute('data-scroll', 'y');
+  }, [menuOpen]);
 
   useEffect(() => {
     const thresh = 2;
@@ -60,13 +58,17 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed z-50 left-0 right-0 top-0 bottom-auto transition-[transform] duration-300 ease-head bg-scroll ${
-          scrollDir > 0 ? ' translate-y-0' : ' -translate-y-full'
-        }`}
+        className={`fixed z-50 left-0 right-0 top-0 bottom-auto transition-[transform] duration-500 ease-head bg-scroll ${
+          menuOpen
+            ? 'translate-y-0'
+            : scrollDir > 0
+            ? ' translate-y-0'
+            : ' -translate-y-full'
+        } `}
       >
         <div
-          className={`relative  px-4 h-head transition-[background-color] delay-75 duration-700 ease-in ${
-            scrollDir < 2 ? 'bg-stone-900' : 'bg-head-overlay'
+          className={`relative px-4 h-head transition-[background-color] ease-head-overlay ${
+            scrollDir < 2 ? ' bg-stone-900 delay-700' : ' bg-head-overlay'
           }`}
         >
           <div className='flex w-full h-full flex-row justify-between xl:grid xl:grid-cols-12 xl:grid-rows-1'>
@@ -76,21 +78,22 @@ const Header = () => {
             <ToggleBtn open={menuOpen} setOpen={setMenuOpen} />
             <ul className='hidden xl:col-start-3 xl:col-end-7 xl:flex xl:items-center xl:justify-evenly'>
               {links.slice(0, 4).map((link, index) => (
-                <li
-                  className='capitalize tracking-wider font-light'
-                  key={index}
-                >
+                <li key={index}>
                   <Link className='link' href={link.href}>
-                    <span>{link.title}</span>
+                    <span className='uppercase font-robo tracking-wider font-light'>
+                      {link.title}
+                    </span>
                   </Link>
                 </li>
               ))}
             </ul>
             <ul className='hidden xl:col-start-9 xl:col-end-13 xl:flex xl:items-center xl:justify-self-end xl:justify-evenly'>
               {links.slice(4, 6).map((link, index) => (
-                <li className='me-6 tracking-wider font-light' key={index}>
-                  <Link className='link capitalize' href={link.href}>
-                    {link.title}
+                <li className='me-6' key={index}>
+                  <Link className='link' href={link.href}>
+                    <span className='uppercase font-robo tracking-wider font-light'>
+                      {link.title}
+                    </span>
                   </Link>
                 </li>
               ))}
