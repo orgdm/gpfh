@@ -41,7 +41,7 @@ htmlFiles.forEach((file) => {
       MAGIC_STRING,
       `<script src="${basePath}${
         basePath.endsWith('/') ? '' : '/'
-      }assets/chunk.${hash}.js" crossorigin=""></script>`
+      }_next/static/chunks/chunk.${hash}.js" crossorigin=""></script>`
     )
   );
   console.log('\tfinished');
