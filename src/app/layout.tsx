@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Open_Sans, Roboto } from 'next/font/google';
+import { Open_Sans, Archivo } from 'next/font/google';
 import './globals.css';
 import SkipToMain from '@/components/layout/SkipToMain';
 import Header from '@/components/layout/Header';
@@ -10,10 +10,9 @@ const openSans = Open_Sans({
   variable: '--font-open-sans',
 });
 
-const roboto = Roboto({
+const archivo = Archivo({
   subsets: ['latin'],
-  variable: '--font-roboto',
-  weight: ['100', '300', '400', '500', '700', '900'],
+  variable: '--font-archivo',
 });
 
 export const metadata: Metadata = {
@@ -35,7 +34,7 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang='en' className={`${roboto.variable} ${openSans.variable}`}>
+    <html lang='en' className={`${archivo.variable} ${openSans.variable}`}>
       <body>
         <SkipToMain />
         <Header />

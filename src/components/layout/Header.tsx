@@ -80,7 +80,7 @@ const Header = () => {
               {links.slice(0, 4).map((link, index) => (
                 <li key={index}>
                   <Link className='link' href={link.href}>
-                    <span className='uppercase font-robo tracking-wider font-light'>
+                    <span className='uppercase font-archivo tracking-wider font-light'>
                       {link.title}
                     </span>
                   </Link>
@@ -91,7 +91,7 @@ const Header = () => {
               {links.slice(4, 6).map((link, index) => (
                 <li className='me-6' key={index}>
                   <Link className='link' href={link.href}>
-                    <span className='uppercase font-robo tracking-wider font-light'>
+                    <span className='uppercase font-archivo tracking-wider font-light'>
                       {link.title}
                     </span>
                   </Link>
