@@ -56,6 +56,14 @@ footer {
     min-height: 100vh;
     min-height: 100svh;
   }
+  .h-scr {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+  .max-h-scr {
+    max-height: 100vh;
+    max-height: 100svh;
+  }
 }
 
 @layer utilities {
@@ -89,10 +97,10 @@ footer {
 
 @layer utilities {
   .ease-in-head {
-    transition-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
   }
-  .ease-out-head {
-    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  .ease-io-head {
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
   }
   .ease-head-overlay {
     transition-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335);

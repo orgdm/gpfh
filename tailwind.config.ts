@@ -46,6 +46,9 @@ const config: Config = {
         'xs': '420px',
         'xxl': '1400px',
       },
+      transitionDuration: {
+        '360': '360ms',
+      },
       keyframes: {
         "accordion-down": {
           from: { height: '0' },

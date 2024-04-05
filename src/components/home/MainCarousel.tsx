@@ -71,10 +71,10 @@ export const MainCarousel = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className={`absolute bottom-7 w-full z-10`}>
+        <div className={`absolute bottom-8 w-full z-10`}>
           <div className='flex flex-col justify-center'>
             <Button
-              className='mx-auto pointer-events-auto bg-[rgba(131,131,131,0.31)] backdrop-blur-md'
+              className='mx-auto pointer-events-auto bg-[rgba(100,100,100,0.5)] backdrop-blur-sm '
               variant={'outlineSec'}
               size={'landing'}
               asChild
@@ -86,7 +86,7 @@ export const MainCarousel = () => {
                 <span className='me-6 font-normal text-main'>
                   View Projects
                 </span>
-                <CaretRightIcon width={30} height={30} />
+                <CaretRightIcon height={30} width={30} />
               </Link>
             </Button>
             <div className='flex justify-center mt-12'>
@@ -94,10 +94,10 @@ export const MainCarousel = () => {
                 <span
                   key={index}
                   onClick={() => api && api.scrollTo(index)}
-                  className={`inline-block cursor-pointer rounded-full border h-3 w-3 outline-white mx-2 ${
+                  className={`inline-block cursor-pointer rounded-full h-3 w-3 mx-2 border border-white ${
                     index + 1 === current
-                      ? 'bg-white'
-                      : 'bg-[rgba(131,131,131,0.31)] backdrop-blur-md'
+                      ? 'bg-white '
+                      : 'bg-[rgba(100,100,100,0.5)]'
                   }`}
                 />
               ))}
