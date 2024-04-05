@@ -46,7 +46,7 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Deploy to S3
-        run: aws s3 sync ./out s3://gpfh-web
+        run: aws s3 sync ./out s3://gpfh-web --delete
 
       - name: Invalidate CloudFront Cache
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.GPFH_DIST_ID }} --paths "/*"

@@ -11,9 +11,9 @@ import {
 const NewsletterCard = () => {
   return (
     <>
-      <Card className='w-full max-w-sm'>
+      <Card className='w-full max-w-md'>
         <CardHeader>
-          <CardTitle className='text-2xl text-center my-[0.4em]'>
+          <CardTitle className='text-3xl font-archivo text-center my-[0.5em] tracking-wider font-normal'>
             newsletter sign up
           </CardTitle>
           <CardDescription className='text-center font-light'>

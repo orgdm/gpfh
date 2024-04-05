@@ -58,17 +58,17 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed z-50 left-0 right-0 top-0 bottom-auto transition-[transform] duration-500 ease-head bg-scroll ${
+        className={`fixed z-50 left-0 right-0 top-0 bottom-auto transition-[transform] bg-head-overlay duration-300 bg-scroll ${
           menuOpen
             ? 'translate-y-0'
             : scrollDir > 0
-            ? ' translate-y-0'
-            : ' -translate-y-full'
+            ? ' translate-y-0 ease-out-head'
+            : ' -translate-y-full ease-in-head'
         } `}
       >
         <div
-          className={`relative px-4 h-head transition-[background-color] ease-head-overlay ${
-            scrollDir < 2 ? ' bg-stone-900 delay-700' : ' bg-head-overlay'
+          className={`relative px-4 h-head transition-[background-color] ease-linear duration-150  ${
+            scrollDir < 2 ? 'delay-500 bg-stone-900 ' : ' bg-transparent'
           }`}
         >
           <div className='flex w-full h-full flex-row justify-between xl:grid xl:grid-cols-12 xl:grid-rows-1'>

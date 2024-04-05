@@ -145,8 +145,8 @@ const Contact = () => {
             <FormItem>
               <FormControl>
                 <Textarea
-                  placeholder='details*'
-                  className='resize-none border-stone-700'
+                  placeholder='message*'
+                  className='resize-none border-stone-700 min-h-28'
                   {...field}
                 />
               </FormControl>
