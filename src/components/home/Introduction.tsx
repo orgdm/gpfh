@@ -13,21 +13,21 @@ const Introduction = () => {
   });
 
   return (
-    <div className='px-8 mx-auto md:px-12 lg:mx-auto xl:max-w-[1260px] py-14'>
+    <div className='px-8 mx-auto lg:mx-auto xl:max-w-[1400px] py-16'>
       <div
         ref={ref}
-        className={`flex flex-row max-lg:flex-wrap gap-x-10 h-full transition-[transform,opacity] delay-75 ease-in duration-200  ${
-          inView ? 'translate-y-0 opacity-100' : 'translate-y-[6%] opacity-0'
+        className={`flex flex-row max-lg:flex-wrap gap-x-10 h-full ease-up  ${
+          inView ? 'translate-y-0 opacity-100' : 'translate-y-[12%] opacity-0'
         }`}
       >
-        <div className='basis-full lg:basis-[62%] flex-shrink-0 flex-grow-0 w-full h-full'>
+        <div className='basis-full lg:basis-[55%] xl:basis-[60%] flex-shrink-0 flex-grow-0 w-full h-full'>
           <div>
             <picture className='w-full h-full'>
               <div className='relative rounded-sm aspect-[7/4]'>
                 <Image
                   src={'/gpfh1.jpg'}
                   fill
-                  className={`object-contain overflow-hidden aspect-[9/5]`}
+                  className={`object-fill overflow-hidden`}
                   alt='sample of work'
                   placeholder='blur'
                   blurDataURL='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
@@ -39,7 +39,7 @@ const Introduction = () => {
         <div className='block basis-auto flex-shrink-1 flex-grow-0'>
           <Heading title='Who We Are' />
           <div>
-            <p className='font-light my-[1em] md:text-lg leading-7 md:leading-8 lg:leading-9'>
+            <p className='font-light my-[1em] xl:text-xl leading-7 md:leading-8 lg:leading-9 xl:leading-10'>
               Grove Park Fine Homes builds luxury homes in the Asheville, North
               Carolina area. We relentlessly pursue perfection in every aspect
               of our custom home design and construction, never compromising on
