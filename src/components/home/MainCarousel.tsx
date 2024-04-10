@@ -42,10 +42,10 @@ const MainCarousel = ({ imgs }: IntroCarouselProps) => {
       >
         <CarouselContent>
           {imgs.map((img, index) => (
-            <CarouselItem className='p-0' key={index}>
-              <div className={`relative h-svh overflow-hidden`}>
+            <CarouselItem className='p-0 h-svh' key={index}>
+              <div className={`relative h-full overflow-hidden`}>
                 <Image
-                  className='object-cover object-center'
+                  className='object-cover'
                   fill
                   priority={true}
                   src={img.url}

@@ -70,10 +70,10 @@ const ServiceCarousel = ({ services }: ServiceCarouselProps) => {
               {services.map((service, index) => (
                 <CarouselItem
                   key={index}
-                  className='sm:basis-1/2 lg:basis-1/3 rounded-smd'
+                  className='sm:basis-1/2 lg:basis-1/3 aspect-square rounded-smd'
                 >
                   <div
-                    className={`relative h-full aspect-square overflow-hidden rounded-smd before:absolute before:h-full before:bottom-0 before:w-full before:content-[''] before:z-[1] before:bg-img-overlay  before:rounded-smd  before:pointer-events-none`}
+                    className={`relative h-full  overflow-hidden rounded-smd before:absolute before:h-full before:bottom-0 before:w-full before:content-[''] before:z-[1] before:bg-img-overlay  before:rounded-smd  before:pointer-events-none`}
                   >
                     <Image
                       src={service.img.url}
@@ -84,7 +84,7 @@ const ServiceCarousel = ({ services }: ServiceCarouselProps) => {
                       className={`rounded-smd object-cover bg-origin-border `}
                     />
                     <div className='h-full flex items-end w-full rounded-smd absolute z-[2]'>
-                      <h3 className={` mt-auto uppercase ps-4 pb-7`}>
+                      <h3 className={`mt-auto uppercase ps-4 pb-7`}>
                         <span className=' tracking-tight line-clamp-1 2xs:text-main xs:text-lg sm:text-xl'>
                           {service.img.title}
                         </span>
