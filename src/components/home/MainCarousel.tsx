@@ -43,15 +43,15 @@ const MainCarousel = ({ imgs }: IntroCarouselProps) => {
         <CarouselContent>
           {imgs.map((img, index) => (
             <CarouselItem className='p-0' key={index}>
-              <div className={`relative h-svh`}>
+              <div className={`relative h-svh overflow-hidden`}>
                 <Image
-                  className='object-cover object-center overflow-hidden'
+                  className='object-cover object-center'
                   fill
+                  priority={true}
                   src={img.url}
                   alt={img.alt}
-                  placeholder='blur'
+                  placeholder='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
                   sizes='100vw'
-                  blurDataURL='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
                 />
               </div>
             </CarouselItem>

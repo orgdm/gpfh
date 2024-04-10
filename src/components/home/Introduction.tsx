@@ -9,7 +9,7 @@ import { useInView } from 'react-intersection-observer';
 
 const Introduction = ({ text, imgs }: WhoProps) => {
   const { ref, inView } = useInView({
-    threshold: 0.2,
+    threshold: 0.3,
     triggerOnce: true,
   });
 
@@ -24,14 +24,14 @@ const Introduction = ({ text, imgs }: WhoProps) => {
         <div className='basis-full lg:basis-[55%] xl:basis-[60%] flex-shrink-0 flex-grow-0 w-full h-full'>
           <div>
             <picture className='w-full h-full'>
-              <div className='relative rounded-sm aspect-[7/4]'>
+              <div className='relative rounded-smd overflow-hidden aspect-[7/4]'>
                 <Image
                   src={imgs[0].url}
                   fill
-                  className={`object-fill overflow-hidden rounded-smd`}
+                  className={`object-fill rounded-smd`}
                   alt={imgs[0].alt}
-                  placeholder='blur'
-                  blurDataURL='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
+                  sizes='100vw, (min-width: 1024px) 50vw, (min-width: 1280px) 1080px'
+                  placeholder='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
                 />
               </div>
             </picture>
