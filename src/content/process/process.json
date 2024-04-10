@@ -1,0 +1,15 @@
+{
+  "$schema": "./process.schema.json",
+  "imgs": [
+    {
+      "title": "who test img 1",
+      "url": "/gpfh_test_8.jpg",
+      "alt": "describe image"
+    }
+  ],
+  "text": {
+    "p1": "Our construction process is simple - we listen to our clients.",
+    "p2": "Whether your project is a remodel, a renovation/addition, a design/build, or a new home construction, Grove Park Fine Homes will take the time to listen to your goals and expectations for your home. We take this information and assimilate it with your architect’s and designer’s ideas and create a built form that is a product of your wants, needs, and personality. Grove Park Fine Homes is dedicated to your project, from start to finish.",
+    "p3": "At Grove Park Fine Homes, our presence on a building project means good thing happen and all parties’ interests are considered. We work to keep regular communication open between the owner, the architect, the engineers, the local building department, and the members or our construction team. We provide information needed for key decisions, and assure decisions are made when needed. We strive to keep the project on track to achieve a finished product that best reflects the client’s goals, dreams, and aspirations."
+  }
+}

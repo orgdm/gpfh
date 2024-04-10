@@ -1,0 +1,15 @@
+{
+  "$schema": "./people.schema.json",
+  "imgs": [
+    {
+      "title": "who test img 1",
+      "url": "/gpfh_test_2.jpg",
+      "alt": "describe image"
+    }
+  ],
+  "text": {
+    "p1": "Throughout his career, John Truitt has been involved in upscale residential home design and construction. He has a Bachelors degree in Interior Design and a Professional Degree in Architecture. With over 20 years of experience working with, and for some of, the South’s most prominent architecture firms and as an Associate Member of the American Institute of Architects, John established Grove Park Fine Homes in 2006.",
+    "p2": "He believed there were several “process builders” in the area, but none who would make the sacrifices necessary to create an impeccable product at a reasonable price. He grew tired of going from job to job and seeing details the architect and homeowner had developed, but had not been properly carried out by the contractor.",
+    "p3": "John realized he wanted to be the builder who recognized custom homes are not only a place to live, but are also works of art. His business practice is to never cut corners and to spend as much time as possible keenly perfecting the craft of homebuilding."
+  }
+}

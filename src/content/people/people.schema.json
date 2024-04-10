@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://gpfh-assets.s3.amazonaws.com/people.schema.json",
+  "title": "People",
+  "description": "GPFH people page content",
+  "type": "object",
+  "properties": {
+    "imgs": {
+      "type": "array"
+    },
+    "text": {
+      "type": "object",
+      "properties": {
+        "p1": {
+          "type": "string"
+        },
+        "p2": {
+          "type": "string"
+        },
+        "p3": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": [
+    "imgs",
+    "text"
+  ],
+  "readOnly": true
+}

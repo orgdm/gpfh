@@ -1,0 +1,17 @@
+{
+  "$schema": "./about.schema.json",
+  "origin": {
+    "img": {
+      "url": "/gpfh_test_6.jpg",
+      "title": "origin test image"
+    },
+    "text": "After years of seeing builders compromise on quality and service instead of fairly estimating projects and properly executing the architect’s vision, John Truitt realized there had to be a better way to build a quality home. In 2006, he created Grove Park Fine Homes to provide the uncompromising service and quality he felt so passionate about."
+  },
+  "mission": {
+    "img": {
+      "url": "/gpfh_test_7.jpg",
+      "title": "mission test image"
+    },
+    "text": "Since its inception, Grove Park Fine Homes always builds with John's vision in mind. We will never cut corners or take shortcuts with any project and will always maintain the highest integrity with all of our clients, subcontractors, and vendors. GPFH believes in fair, upfront customer service and an unyielding commitment to turning your custom home project or renovation into a work of art. Today, Grove Park Fine Homes carries a reputation for building high-quality luxury homes and customer service that always exceeds expectations. We will continue to build that reputation and never cease in our quest to go above and beyond to build beautiful custom homes."
+  }
+}

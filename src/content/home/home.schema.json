@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Home",
+  "description": "GPFH home page content",
+  "type": "object",
+  "properties": {
+    "IntroCarousel": {
+      "type": "object",
+      "properties": {
+        "imgs": {
+          "type": "array"
+        }
+      }
+    },
+    "WhoWeAre": {
+      "type": "object",
+      "properties": {
+        "img": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "alt": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          }
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "ServiceCarousel": {
+      "type": "object",
+      "properties": {
+        "services": {
+          "type": "array"
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "GreenApproach": {
+      "type": "object",
+      "properties": {
+        "img": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "alt": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          }
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "Contact": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "readOnly": true
+}

@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
-
+import type { IntroCarouselProps } from '@/types/home';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -13,22 +13,7 @@ import {
 import Autoplay from 'embla-carousel-autoplay';
 import { CaretRightIcon } from '@radix-ui/react-icons';
 
-const imgs = [
-  {
-    title: 'test img 1',
-    bg: '/gpfh1.jpg',
-  },
-  {
-    title: 'test img 2',
-    bg: '/gpfh_test_2.jpg',
-  },
-  {
-    title: 'test img 3',
-    bg: '/gpfh_test_3.jpg',
-  },
-];
-
-export const MainCarousel = () => {
+const MainCarousel = ({ imgs }: IntroCarouselProps) => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
@@ -62,9 +47,10 @@ export const MainCarousel = () => {
                 <Image
                   className='object-cover object-center overflow-hidden'
                   fill
-                  src={img.bg}
-                  alt={img.title}
+                  src={img.url}
+                  alt={img.alt}
                   placeholder='blur'
+                  sizes='100vw'
                   blurDataURL='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
                 />
               </div>

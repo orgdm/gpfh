@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import Heading from '../layout/Heading';
-import type { ServiceProps } from '@/types/home';
+import type { ServiceCarouselProps } from '@/types/home';
 
 import {
   Carousel,
@@ -14,40 +14,7 @@ import { Button } from '@/components/ui/button';
 
 import Image from 'next/image';
 
-const services: ServiceProps[] = [
-  {
-    title: 'Luxury Home Design',
-    img: '/gpfh_test_3.jpg',
-    desc: 'Grove Park Fine Homes builds luxury homes in the Asheville, North Carolina area. We relentlessly pursue perfection in every aspect of our custom home design and construction, never compromising on quality and service',
-    id: 1,
-  },
-  {
-    title: 'Custom Renovations',
-    img: '/gpfh_test_3.jpg',
-    desc: 'Specializing in environmentally friendly homes and building practices, we always approach your project with a goal of minimal environmental impact. Our custom projects are incorporated into the natural North Carolina landscape in areas like Balsam Mountain Preserve, Biltmore Forest, Laurel Ridge Country Club, Kenmure Country Club, Lake Lure and private Equestrian Estates. Grove Park Fine Homes strives to preserve our environment, both locally and globally',
-    id: 2,
-  },
-  {
-    title: 'Premium Home Construction',
-    img: '/gpfh_test_3.jpg',
-    desc: 'Specializing in environmentally friendly homes and building practices, we always approach your project with a goal of minimal environmental impact. Our custom projects are incorporated into the natural North Carolina landscape in areas like Balsam Mountain Preserve, Biltmore Forest, Laurel Ridge Country Club, Kenmure Country Club, Lake Lure and private Equestrian Estates. Grove Park Fine Homes strives to preserve our environment, both locally and globally',
-    id: 3,
-  },
-  {
-    title: 'Construction Management',
-    img: '/gpfh_test_3.jpg',
-    desc: 'Specializing in environmentally friendly homes and building practices, we always approach your project with a goal of minimal environmental impact. Our custom projects are incorporated into the natural North Carolina landscape in areas like Balsam Mountain Preserve, Biltmore Forest, Laurel Ridge Country Club, Kenmure Country Club, Lake Lure and private Equestrian Estates. Grove Park Fine Homes strives to preserve our environment, both locally and globally',
-    id: 4,
-  },
-  {
-    title: 'Green Homes',
-    img: '/gpfh_test_3.jpg',
-    desc: 'Specializing in environmentally friendly homes and building practices, we always approach your project with a goal of minimal environmental impact. Our custom projects are incorporated into the natural North Carolina landscape in areas like Balsam Mountain Preserve, Biltmore Forest, Laurel Ridge Country Club, Kenmure Country Club, Lake Lure and private Equestrian Estates. Grove Park Fine Homes strives to preserve our environment, both locally and globally',
-    id: 5,
-  },
-];
-
-const ServiceCarousel = () => {
+const ServiceCarousel = ({ services }: ServiceCarouselProps) => {
   const [api, setApi] = useState<CarouselApi>();
   const [prevDisabled, setPrevDisabled] = useState<boolean>(true);
   const [nextDisabled, setNextDisabled] = useState<boolean>(true);
@@ -93,28 +60,34 @@ const ServiceCarousel = () => {
         <div className='relative'>
           <Carousel
             setApi={setApi}
-            opts={{ align: 'start', slidesToScroll: 'auto' }}
+            opts={{
+              align: 'start',
+              slidesToScroll: 'auto',
+              watchSlides: false,
+            }}
           >
             <CarouselContent>
-              {services.map((service) => (
+              {services.map((service, index) => (
                 <CarouselItem
-                  key={service.id}
-                  className='sm:basis-1/2 md:basis-1/3 aspect-square'
+                  key={index}
+                  className='sm:basis-1/2 lg:basis-1/3 rounded-smd'
                 >
                   <div
-                    className={`relative h-full rounded-sm before:absolute before:h-full before:bottom-0 before:w-full before:content-[''] before:z-[1] before:bg-img-overlay  before:pointer-events-none`}
+                    className={`relative h-full aspect-square overflow-hidden rounded-smd before:absolute before:h-full before:bottom-0 before:w-full before:content-[''] before:z-[1] before:bg-img-overlay before:rounded-smd  before:pointer-events-none`}
                   >
                     <Image
-                      src={service.img}
-                      alt={service.title}
+                      src={service.img.url}
+                      alt={service.img.alt}
                       fill
                       placeholder='blur'
                       blurDataURL='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
-                      className={`overflow-hidden rounded-md will-change-[opacity] object-cover transition-opacity duration-500 origin-center bg-origin-border `}
+                      className={`rounded-smd object-cover bg-origin-border `}
                     />
-                    <div className='h-full flex items-end w-full absolute z-[2]'>
-                      <h3 className={`text-xl mt-auto uppercase ps-4 pb-9`}>
-                        {service.title}
+                    <div className='h-full flex items-end w-full rounded-smd absolute z-[2]'>
+                      <h3 className={` mt-auto uppercase ps-4 pb-9`}>
+                        <span className='font-archivo font-light tracking-tight line-clamp-1 2xs:text-main xs:text-lg sm:text-xl'>
+                          {service.img.title}
+                        </span>
                       </h3>
                     </div>
                   </div>

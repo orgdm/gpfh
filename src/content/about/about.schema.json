@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://gpfh-assets.s3.amazonaws.com/about.schema.json",
+  "title": "About",
+  "description": "GPFH about page content",
+  "type": "object",
+  "properties": {
+    "origin": {
+      "type": "object",
+      "properties": {
+        "img": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          }
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "img",
+        "text"
+      ]
+    },
+    "mission": {
+      "type": "object",
+      "properties": {
+        "img": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          }
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "img",
+        "text"
+      ]
+    }
+  },
+  "required": [
+    "origin",
+    "mission"
+  ]
+}

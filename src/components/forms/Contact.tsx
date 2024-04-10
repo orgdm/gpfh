@@ -30,6 +30,10 @@ const formSchema = z.object({
     .string()
     .min(1, { message: 'This field has to be filled.' })
     .email('Please enter a valid email.'),
+  zipCode: z
+    .number()
+    .min(5, { message: 'Must be at least 5 digits.' })
+    .max(9, { message: 'Must be less than 9 digits.' }),
   organization: z.string().max(300, { message: 'Please abbreviate' }),
   details: z
     .string()
@@ -45,6 +49,7 @@ const Contact = () => {
       firstName: '',
       lastName: '',
       email: '',
+      zipCode: undefined,
       organization: '',
       details: '',
     },
@@ -115,6 +120,22 @@ const Contact = () => {
                 <Input
                   className='border-b border-stone-700'
                   placeholder='email*'
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='zipCode'
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input
+                  className='border-b border-stone-700'
+                  placeholder='zip code*'
                   {...field}
                 />
               </FormControl>

@@ -18,8 +18,6 @@ const config: Config = {
       },
       fontSize: {
         'main': '1.12146rem',
-        'dsm': 'calc(1.25625rem + .075vw)',
-        'dmd': 'calc(1.33125rem + .975vw)',
         '4xl': '2rem',
         '5xl': '2.6rem',
         '6xl': '3.4rem',
@@ -35,6 +33,7 @@ const config: Config = {
         'head': 'top, background-color'
       },
       borderRadius: {
+        'smd': '0.1985rem',
         'xxl': '2.5rem',
         'oval': '1.14265rem'
       },

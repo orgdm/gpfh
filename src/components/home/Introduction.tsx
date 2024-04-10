@@ -1,4 +1,5 @@
 'use client';
+import type { WhoProps } from '@/types/home';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -6,7 +7,7 @@ import Heading from '../layout/Heading';
 import { CaretRightIcon } from '@radix-ui/react-icons';
 import { useInView } from 'react-intersection-observer';
 
-const Introduction = () => {
+const Introduction = ({ text, imgs }: WhoProps) => {
   const { ref, inView } = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -25,10 +26,10 @@ const Introduction = () => {
             <picture className='w-full h-full'>
               <div className='relative rounded-sm aspect-[7/4]'>
                 <Image
-                  src={'/gpfh1.jpg'}
+                  src={imgs[0].url}
                   fill
-                  className={`object-fill overflow-hidden`}
-                  alt='sample of work'
+                  className={`object-fill overflow-hidden rounded-smd`}
+                  alt={imgs[0].alt}
                   placeholder='blur'
                   blurDataURL='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
                 />
@@ -40,10 +41,7 @@ const Introduction = () => {
           <Heading title='Who We Are' />
           <div>
             <p className='font-light my-[1em] xl:text-xl leading-7 md:leading-8 lg:leading-9 xl:leading-10'>
-              Grove Park Fine Homes builds luxury homes in the Asheville, North
-              Carolina area. We relentlessly pursue perfection in every aspect
-              of our custom home design and construction, never compromising on
-              quality and service.
+              {text}
             </p>
           </div>
           <div className='mt-6 flex items-end '>

@@ -1,0 +1,99 @@
+{
+  "$schema": "./home.schema.json",
+  "IntroCarousel": {
+    "imgs": [
+      {
+        "title": "test img 1",
+        "alt": "describe image",
+        "url": "/gpfh_test_8.jpg"
+      },
+      {
+        "title": "test img 2",
+        "alt": "describe image",
+        "url": "/gpfh_test_2.jpg"
+      },
+      {
+        "title": "test img 3",
+        "alt": "describe image",
+        "url": "/gpfh_test_3.jpg"
+      }
+    ]
+  },
+  "WhoWeAre": {
+    "text": "Grove Park Fine Homes is a boutique, luxury homebuilder and renovation expert in the Asheville, North Carolina area. We relentlessly pursue perfection in every aspect of our customer home design and construction, never compromising on quality and service.",
+    "imgs": [
+      {
+        "title": "who test img",
+        "alt": "describe image",
+        "url": "/gpfh_test_3.jpg"
+      }
+    ]
+  },
+  "ServiceCarousel": {
+    "services": [
+      {
+        "img": {
+          "title": "Luxury Home Design",
+          "alt": "placeholder",
+          "url": "/gpfh_test_8.jpg",
+          "desc": "Grove Park Fine Homes builds luxury homes in the Asheville, North Carolina area. We relentlessly pursue perfection in every aspect of our custom home design and construction, never compromising on quality and service"
+        }
+      },
+      {
+        "img": {
+          "title": "Custom Renovations",
+          "alt": "placeholder",
+          "url": "/gpfh_test_6.jpg",
+          "desc": "Specializing in environmentally friendly homes and building practices, we always approach your project with a goal of minimal environmental impact. Our custom projects are incorporated into the natural North Carolina landscape in areas like Balsam Mountain Preserve, Biltmore Forest, Laurel Ridge Country Club, Kenmure Country Club, Lake Lure and private Equestrian Estates. Grove Park Fine Homes strives to preserve our environment, both locally and globally"
+        }
+      },
+      {
+        "img": {
+          "title": "Premium Home Construction",
+          "alt": "placeholder",
+          "url": "/gpfh_test_4.jpg",
+          "desc": "Specializing in environmentally friendly homes and building practices, we always approach your project with a goal of minimal environmental impact. Our custom projects are incorporated into the natural North Carolina landscape in areas like Balsam Mountain Preserve, Biltmore Forest, Laurel Ridge Country Club, Kenmure Country Club, Lake Lure and private Equestrian Estates. Grove Park Fine Homes strives to preserve our environment, both locally and globally"
+        }
+      },
+      {
+        "img": {
+          "title": "Construction Management",
+          "alt": "placeholder",
+          "url": "/gpfh_test_7.jpg",
+          "desc": "Specializing in environmentally friendly homes and building practices, we always approach your project with a goal of minimal environmental impact. Our custom projects are incorporated into the natural North Carolina landscape in areas like Balsam Mountain Preserve, Biltmore Forest, Laurel Ridge Country Club, Kenmure Country Club, Lake Lure and private Equestrian Estates. Grove Park Fine Homes strives to preserve our environment, both locally and globally"
+        }
+      },
+      {
+        "img": {
+          "title": "Green Homes",
+          "alt": "placeholder",
+          "url": "/gpfh_test_5.jpg",
+          "desc": "Specializing in environmentally friendly homes and building practices, we always approach your project with a goal of minimal environmental impact. Our custom projects are incorporated into the natural North Carolina landscape in areas like Balsam Mountain Preserve, Biltmore Forest, Laurel Ridge Country Club, Kenmure Country Club, Lake Lure and private Equestrian Estates. Grove Park Fine Homes strives to preserve our environment, both locally and globally"
+        }
+      }
+    ]
+  },
+  "GreenApproach": {
+    "text": "Specializing in environmentally-friendly homes and building practices, we alway approach your project with the goal of minimal environmental impact. Our custom projects are incorporated into the natural North Carolina landscape in areas like Balsam Mountain Preserve, Biltmore Forest, Laurel Ridge Country Club, Kenmure County Club, Lake Lure, and private Equestrian Estates. Grove Park Fine Homes strives to preserve our environment, both locally and globally.",
+    "imgs": [
+      {
+        "title": "green test img",
+        "alt": "describe image",
+        "url": "/gpfh_test_4.jpg"
+      }
+    ]
+  },
+  "OurStandards": {
+    "text": "With a team of skilled professionals including only the highest quality builders and management trained in architecture and engineering, Grove Park Fine Homes brings an unmatched expertise to your customer project. Our service never waivers - from the first design meeting, through construction and long after your project is completed. We relentlessly pursue perfection in every aspect.",
+    "imgs": [
+      {
+        "title": "strict high quality standards",
+        "alt": "describe image",
+        "url": "/gpfh_test_5.jpg"
+      }
+    ]
+  },
+  "Contact": {
+    "text": "Call us at 828-243-0701 or contact us online for more information about our Custom Home Building and Construction Services."
+  }
+}
