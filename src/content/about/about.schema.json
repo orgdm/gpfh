@@ -8,6 +8,9 @@
     "origin": {
       "type": "object",
       "properties": {
+        "title": {
+          "type": "string"
+        },
         "img": {
           "type": "object",
           "properties": {
@@ -24,6 +27,7 @@
         }
       },
       "required": [
+        "title",
         "img",
         "text"
       ]
@@ -31,6 +35,9 @@
     "mission": {
       "type": "object",
       "properties": {
+        "title": {
+          "type": "string"
+        },
         "img": {
           "type": "object",
           "properties": {
@@ -47,6 +54,7 @@
         }
       },
       "required": [
+        "title",
         "img",
         "text"
       ]

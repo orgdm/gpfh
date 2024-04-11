@@ -1,11 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-
-export type ContentImg = {
-  title: string;
-  url: string;
-  desc?: string;
-  alt: string;
-}
+import type { ContentImg } from '../layout';
 
 export type IntroCarouselProps = {
   imgs: ContentImg[];

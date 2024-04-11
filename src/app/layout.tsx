@@ -8,11 +8,13 @@ import Footer from '@/components/layout/footer/Footer';
 const openSans = Open_Sans({
   subsets: ['latin'],
   variable: '--font-open-sans',
+  display: 'swap',
 });
 
 const archivo = Archivo({
   subsets: ['latin'],
   variable: '--font-archivo',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -38,7 +40,7 @@ const RootLayout = ({
       <body>
         <SkipToMain />
         <Header />
-        <main id='mainContent' className='font-sans bg-stone'>
+        <main id='mainContent' className='font-sans bg-stone-950'>
           {children}
         </main>
         <Footer />

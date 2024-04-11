@@ -24,7 +24,7 @@ const Introduction = ({ text, imgs }: WhoProps) => {
         <div className='basis-full lg:basis-[55%] xl:basis-[60%] flex-shrink-0 flex-grow-0 w-full h-full'>
           <div>
             <picture className='w-full h-full'>
-              <div className='relative rounded-smd overflow-hidden aspect-[7/4]'>
+              <div className='relative rounded-smd overflow-hidden aspect-[3/2]'>
                 <Image
                   src={imgs[0].url}
                   fill
