@@ -73,27 +73,34 @@
       }
     ]
   },
-  "GreenApproach": {
-    "text": "Specializing in environmentally-friendly homes and building practices, we alway approach your project with the goal of minimal environmental impact. Our custom projects are incorporated into the natural North Carolina landscape in areas like Balsam Mountain Preserve, Biltmore Forest, Laurel Ridge Country Club, Kenmure County Club, Lake Lure, and private Equestrian Estates. Grove Park Fine Homes strives to preserve our environment, both locally and globally.",
-    "imgs": [
+  "Environment": {
+    "items": [
       {
-        "title": "green test img",
-        "alt": "describe image",
-        "url": "/gpfh_test_4.jpg"
+        "title": "Green approach",
+        "text": "Specializing in environmentally-friendly homes and building practices, we always approach your project with the the goal of minimal environmental impact.",
+        "img": {
+          "title": "green test img 1",
+          "alt": "describe image",
+          "url": "/gpfh1.jpg"
+        }
+      },
+      {
+        "title": "Sustainable Focus",
+        "text": "Our custom projects are incorporated into the natural North Carolina landscape in areas like Balsam Mountain Preserve, Biltmore Forest, Laurel Ridge Country Club, Kenmure County Club, Lake Lure, and private Equestrian Estates. Grove Park Fine Homes strives to preserve our environment, both locally and globally.",
+        "img": {
+          "title": "green test img 2",
+          "alt": "describe image",
+          "url": "/gpfh1.jpg"
+        }
       }
     ]
   },
   "OurStandards": {
-    "text": "With a team of skilled professionals including only the highest quality builders and management trained in architecture and engineering, Grove Park Fine Homes brings an unmatched expertise to your customer project. Our service never waivers - from the first design meeting, through construction and long after your project is completed. We relentlessly pursue perfection in every aspect.",
-    "imgs": [
-      {
-        "title": "strict high quality standards",
-        "alt": "describe image",
-        "url": "/gpfh_test_5.jpg"
-      }
-    ]
-  },
-  "Contact": {
-    "text": "Call us at 828-243-0701 or contact us online for more information about our Custom Home Building and Construction Services."
+    "text": "With a team of skilled professionals including only the highest quality builders and management trained in architecture and engineering, Grove Park Fine Homes brings an unmatched expertise to your customer project. Our service never waivers - from the first design meeting, through construction and long after your project is completed.",
+    "img": {
+      "title": "strict high quality standards",
+      "alt": "describe image",
+      "url": "/gpfh_test_3.jpg"
+    }
   }
 }

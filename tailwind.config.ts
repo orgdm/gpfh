@@ -18,10 +18,19 @@ const config: Config = {
       },
       fontSize: {
         'main': '1.12146rem',
+        'titext': 'calc(0.865rem + 0.36vw)',
+        'tibtext2': 'calc(0.9rem + 0.42vw)',
+        'hs1': 'calc(1.6rem + 0.8vw)',
+        'hs2': 'calc(1.6rem + 1.6vw)',
         '4xl': '2rem',
         '5xl': '2.6rem',
         '6xl': '3.4rem',
         '7xl': '4.2rem'
+      },
+      letterSpacing: {
+        'hti': '0.0785rem',
+        'tibtext': '0.3em',
+        'widest2': '0.125rem',
       },
       backgroundImage: {
         "overlay": "linear-gradient(rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0) 100%",
@@ -44,6 +53,7 @@ const config: Config = {
         '2xs': '360px',
         'xs': '420px',
         'xxl': '1400px',
+        '2md': '900px'
       },
       transitionDuration: {
         '360': '360ms',

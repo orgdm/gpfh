@@ -1,12 +1,12 @@
 import type { ContentImg } from "../layout";
 
-export type PeopleParagraph = {
+export type ProcessParagraph = {
   p1: string;
   p2: string;
   p3: string;
 }
 
-export type PeopleProps = {
+export type ProcessProps = {
   imgs: ContentImg[];
-  text: PeopleParagraph;
+  text: ProcessParagraph;
 }

@@ -34,15 +34,15 @@ const MainCarousel = ({ imgs }: IntroCarouselProps) => {
   }, [api]);
 
   return (
-    <>
+    <div className='relative'>
       <Carousel
         opts={{ loop: true }}
         plugins={[plugin.current]}
         setApi={setApi}
       >
-        <CarouselContent>
+        <CarouselContent className='h-screen'>
           {imgs.map((img, index) => (
-            <CarouselItem className='p-0 h-svh' key={index}>
+            <CarouselItem className='p-0 h-full' key={index}>
               <div className={`relative h-full overflow-hidden`}>
                 <Image
                   className='object-cover'
@@ -57,41 +57,39 @@ const MainCarousel = ({ imgs }: IntroCarouselProps) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className={`absolute bottom-8 w-full z-10`}>
-          <div className='flex flex-col justify-center'>
-            <Button
-              className='mx-auto pointer-events-auto bg-[rgba(100,100,100,0.5)] backdrop-blur-sm '
-              variant={'outlineSec'}
-              size={'landing'}
-              asChild
+      </Carousel>
+      <div className={`absolute bottom-8 w-full z-10`}>
+        <div className='flex flex-col justify-center'>
+          <Button
+            className='mx-auto pointer-events-auto bg-[rgba(100,100,100,0.5)] backdrop-blur-sm '
+            variant={'outlineSec'}
+            size={'landing'}
+            asChild
+          >
+            <Link
+              href={'/projects'}
+              className='max-w-[600px] flex flex-row justify-between'
             >
-              <Link
-                href={'/projects'}
-                className='max-w-[600px] flex flex-row justify-between'
-              >
-                <span className='me-6 font-normal text-main'>
-                  View Projects
-                </span>
-                <CaretRightIcon height={30} width={30} />
-              </Link>
-            </Button>
-            <div className='flex justify-center mt-12'>
-              {Array.from({ length: count }).map((i, index) => (
-                <span
-                  key={index}
-                  onClick={() => api && api.scrollTo(index)}
-                  className={`inline-block cursor-pointer rounded-full h-3 w-3 mx-2 border border-white ${
-                    index + 1 === current
-                      ? 'bg-white '
-                      : 'bg-[rgba(100,100,100,0.5)]'
-                  }`}
-                />
-              ))}
-            </div>
+              <span className='me-6 font-normal text-main'>View Projects</span>
+              <CaretRightIcon height={30} width={30} />
+            </Link>
+          </Button>
+          <div className='flex justify-center mt-12'>
+            {Array.from({ length: imgs.length }).map((i, index) => (
+              <span
+                key={index}
+                onClick={() => api && api.scrollTo(index)}
+                className={`inline-block cursor-pointer rounded-full h-3 w-3 mx-2 border border-white ${
+                  index + 1 === current
+                    ? 'bg-white '
+                    : 'bg-[rgba(100,100,100,0.5)]'
+                }`}
+              />
+            ))}
           </div>
         </div>
-      </Carousel>
-    </>
+      </div>
+    </div>
   );
 };
 

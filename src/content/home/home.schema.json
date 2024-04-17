@@ -45,9 +45,12 @@
         }
       }
     },
-    "GreenApproach": {
+    "OurStandards": {
       "type": "object",
       "properties": {
+        "text": {
+          "type": "string"
+        },
         "img": {
           "type": "object",
           "properties": {
@@ -61,9 +64,14 @@
               "type": "string"
             }
           }
-        },
-        "text": {
-          "type": "string"
+        }
+      }
+    },
+    "Environment": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array"
         }
       }
     },
@@ -76,5 +84,12 @@
       }
     }
   },
-  "readOnly": true
+  "readOnly": true,
+  "required": [
+    "IntroCarousel",
+    "WhoWeAre",
+    "ServiceCarousel",
+    "OurStandards",
+    "Environment"
+  ]
 }

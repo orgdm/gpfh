@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import type { ContentImg } from '../layout';
+import type { ContentImg, TextImageProps } from '../layout';
 
 export type IntroCarouselProps = {
   imgs: ContentImg[];
@@ -18,16 +18,33 @@ export type ServiceCarouselProps = {
   services: ServiceProps[];
 }
 
+
+export type GreenApproachText = {
+  p1: string;
+  p2: string;
+}
+
 export type GreenApproachProps = {
-  img: ContentImg;
+  title: string;
+  imgs: ContentImg[];
+  text: GreenApproachText;
+}
+
+export type OurStandardsProps = {
   text: string;
+  img: ContentImg
+}
+
+export type EnvironmentProps = {
+  items: TextImageProps[];
 }
 
 export type HomeProps = {
   IntroCarousel: IntroCarouselProps;
   WhoWeAre: WhoProps;
   ServiceCarousel: ServiceCarouselProps;
-  GreenApproach: GreenApproachProps;
+  OurStandards: OurStandardsProps;
+  Environment: EnvironmentProps;
 }
 
 
