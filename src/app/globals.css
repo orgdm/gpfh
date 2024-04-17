@@ -75,17 +75,21 @@ footer {
     position: absolute;
     left: 0;
     top: 1.7rem;
-    width: 0;
+    width: 100%;
     background-color: #fff;
     content: '';
-    transition-property: width;
-    transition-duration: 200ms;
+    transition-property: transform;
+    transition-duration: 300ms;
+    transform-origin: right;
+    transform: scaleX(0);
     transition-delay: 0ms;
-    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-timing-function: ease;
   }
   .link:hover::after {
     content: '';
-    width: 100%;
+    transform: scale(1);
+    transform-origin: left;
+    transition: transform 300ms ease;
   }
 }
 

@@ -13,7 +13,7 @@ const ToggleBtn = memo(function ToggleBtn({
 }: FullScreenNavProps) {
   return (
     <>
-      <ul className='flex items-center xl:hidden'>
+      <ul className='flex items-center xxl:hidden'>
         <li
           id='menuToggleOuter'
           className='w-[48px] h-[48px] z-[100] flex items-center justify-end pointer-events-auto no-underline aspect-square'

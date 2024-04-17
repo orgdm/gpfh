@@ -10,4 +10,5 @@ export const pageLinks: PageLinks[] = [
   { title: 'people', href: '/people' },
   { title: 'contact', href: '/contact' },
   { title: 'newsletter', href: '/newsletter' },
+  {title: 'sustainability', href: '/sustainability'}
 ];

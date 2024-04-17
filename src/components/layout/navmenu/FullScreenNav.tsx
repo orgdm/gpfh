@@ -26,21 +26,24 @@ const FullScreenNav = memo(function FullScreenNav({
           <div
             className={`w-full md:w-[45%] z-20 bg-stone-900 pointer-events-auto`}
           >
-            <div className='mt-[9em] mb-10'>
+            <div
+              className={`mt-[9em] mb-10 transition-[opacity] duration-360 delay-300 ease-in-out ${
+                open ? ' opacity-100' : '  opacity-0 '
+              }`}
+            >
               <menu className='flex flex-col w-full pointer-events-auto px-8'>
                 {pageLinks.map((link, index) => (
-                  <li
-                    key={index}
-                    className='w-full py-3 flex justify-end text-xl font-light uppercase font-archivo tracking-wider'
-                  >
+                  <li key={index} className={`w-full py-3 flex justify-end `}>
                     <Link
-                      className={`transition-[opacity] delay-200 duration-300 link  ${
-                        open ? ' opacity-100' : '  opacity-0'
-                      }`}
+                      className={`link`}
                       onClick={() => setOpen(false)}
                       href={link.href}
                     >
-                      <span className={`uppercase`}>{link.title}</span>
+                      <span
+                        className={`text-xl font-light uppercase font-archivo tracking-wide`}
+                      >
+                        {link.title}
+                      </span>
                     </Link>
                   </li>
                 ))}
