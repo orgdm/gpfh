@@ -1,0 +1,21 @@
+{
+  "$schema": "./sustainability.schema.json",
+  "commitment": {
+    "title": "GPFH Commitment to Sustainability",
+    "text": "In recent years, building homes with environmentally-friendly materials and practices has become increasingly important to our community and planet. We endeavor to minimize our environmental footprint in our business and with your custom home. For any client hoping to pursue a custom home using sustainable construction practices, we offer several options for you so that your home can be as “green” and environmentally-friendly as you desire."
+  },
+  "nhba": {
+    "text": "Grove Park Fine Homes is an NHBA Certified Green Professional."
+  },
+  "greenPractices": {
+    "text": "Many luxury homebuilders have been slow to adopt “green” practices, but we believe it is our responsibility as a business to be good stewards of the land. Our high quality materials will last for generations and your home will be more energy-efficient."
+  },
+  "ecoFriendly": {
+    "text": "We embrace the natural beauty of the mountains of western North Carolina and we work to ensure that  all of our custom projects become a part of that landscape, not a distraction from it.",
+    "img": {
+      "title": "Eco-Friendly Building",
+      "url": "/gpfh1.jpg",
+      "alt": "building with sustainability in mind"
+    }
+  }
+}

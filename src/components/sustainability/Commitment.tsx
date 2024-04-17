@@ -1,9 +1,11 @@
 import Heading from '../layout/Heading';
+import { CommitmentProps } from '@/types/sustainability';
 
-const Commitment = () => {
+const Commitment = ({ text, title }: CommitmentProps) => {
   return (
-    <div className='py-24'>
-      <Heading title='GPFH Commitment to Sustainability' />
+    <div className='py-24 px-8'>
+      <Heading title={title} />
+      <p>{text}</p>
     </div>
   );
 };

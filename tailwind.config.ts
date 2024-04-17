@@ -20,7 +20,7 @@ const config: Config = {
 				main: '1.12146rem',
 				tibp: 'clamp(18px, calc(0.7em + 0.7vw), 22px)',
 				tibtext2: 'calc(0.9rem + 0.42vw)',
-				hs1: 'clamp(30px, calc(1.36rem + 0.88vw), 44px)',
+				hs1: 'clamp(1.75rem, calc(1.5rem + 0.65vw), 2.75rem)',
 				'4xl': '2rem',
 				'5xl': '2.6rem',
 				'6xl': '3.4rem',

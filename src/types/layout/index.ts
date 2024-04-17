@@ -10,9 +10,16 @@ export type ContentImg = {
   alt: string;
 }
 
-export type TextImageProps = {
+export type TextImageLinkProps = {
   link: string;
   linkText: string;
+  img: ContentImg;
+  title: string;
+  text: string;
+  rtl: boolean;
+}
+
+export type TextImageProps = {
   img: ContentImg;
   title: string;
   text: string;

@@ -1,10 +1,20 @@
 'use client';
 import Image from 'next/image';
 import Heading from './Heading';
-import { TextImageProps } from '@/types/layout';
+import { Button } from '../ui/button';
+import Link from 'next/link';
+import { CaretRightIcon } from '@radix-ui/react-icons';
+import { TextImageLinkProps } from '@/types/layout';
 import { useInView } from 'react-intersection-observer';
 
-const TextImage = ({ img, text, rtl, title }: TextImageProps) => {
+const TextImageLink = ({
+  img,
+  text,
+  rtl,
+  title,
+  link,
+  linkText,
+}: TextImageLinkProps) => {
   const { ref, inView } = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -41,9 +51,19 @@ const TextImage = ({ img, text, rtl, title }: TextImageProps) => {
         >
           <div className='lg:w-[90%]'>
             <Heading title={title} size='ti' />
-            <p className='font-light py-1 text-tibp leading-normal xl:leading-relaxed w-full'>
+            <p className='font-light py-1 text-[1rem] md:text-[1.125rem] xl:text-[1.375rem] leading-normal lg:leading-relaxed w-full'>
               {text}
             </p>
+            <div className='mt-8 flex items-end '>
+              <Button asChild variant={'outline'} size={'intro'}>
+                <Link href={link} className='flex flex-row justify-between'>
+                  <span className='me-4 font-normal tracking-wide text-lg'>
+                    {linkText}
+                  </span>
+                  <CaretRightIcon width={24} height={24} viewBox='0 0 14 14' />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
@@ -51,4 +71,4 @@ const TextImage = ({ img, text, rtl, title }: TextImageProps) => {
   );
 };
 
-export default TextImage;
+export default TextImageLink;
