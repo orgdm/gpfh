@@ -13,28 +13,43 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '../ui/textarea';
 
+const numRegex = new RegExp(/[0-9]{3}-?[0-9]{3}-?[0-9]{4}/);
+
 const formSchema = z.object({
   subject: z
     .string()
     .min(3, { message: 'This field has to be filled.' })
     .max(80, { message: 'Subject too long, move to details' }),
-  firstName: z
+  name: z
     .string()
     .min(1, { message: 'This field has to be filled.' })
-    .max(50),
-  lastName: z
-    .string()
-    .min(1, { message: 'This field has to be filled.' })
-    .max(80),
+    .max(150, { message: 'Too many characters' }),
   email: z
     .string()
     .min(1, { message: 'This field has to be filled.' })
     .email('Please enter a valid email.'),
-  zipCode: z
-    .number()
-    .min(5, { message: 'Must be at least 5 digits.' })
-    .max(9, { message: 'Must be less than 9 digits.' }),
+  phone: z
+    .string()
+    .regex(numRegex, 'Invalid Phone Number')
+    .min(10, { message: 'Please enter a valid US phone number' })
+    .max(13, { message: 'Please enter a valid US phone number' }),
   organization: z.string().max(300, { message: 'Please abbreviate' }),
+  address: z
+    .string()
+    .regex(
+      /^\d{1,6}\040([A-Z]{1}[a-z]{1,}\040[A-Z]{1}[a-z]{1,})$|^\d{1,6}\040([A-Z]{1}[a-z]{1,}\040[A-Z]{1}[a-z]{1,}\040[A-Z]{1}[a-z.]{1,})$|^\d{1,6}\040([A-Z]{1}[a-z]{1,}\040[A-Z]{1}[a-z]{1,}\040[A-Z]{1}[a-z]{1,}\040[A-Z]{1}[a-z]{1,})$/,
+      'Invalid address'
+    ),
+  city: z
+    .string()
+    .min(1, { message: 'Please enter your city' })
+    .max(120, { message: 'Please enter your city' }),
+  state: z
+    .string()
+    .regex(
+      /(A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|PA|RI|S[CD]|T[NX]|UT|V[AT]|W[AIVY])/gim
+    ),
+  zipCode: z.string().regex(/^\d{5}(-\d{4})?$/, 'Invalid zip code'),
   details: z
     .string()
     .min(3, { message: 'This field has to be filled.' })
@@ -46,11 +61,14 @@ const Contact = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       subject: '',
-      firstName: '',
-      lastName: '',
+      name: '',
+      phone: '',
       email: '',
-      zipCode: undefined,
       organization: '',
+      address: '',
+      city: '',
+      state: '',
+      zipCode: '',
       details: '',
     },
   });
@@ -81,13 +99,13 @@ const Contact = () => {
         />
         <FormField
           control={form.control}
-          name='firstName'
+          name='name'
           render={({ field }) => (
             <FormItem>
               <FormControl>
                 <Input
                   className='border-b border-stone-700'
-                  placeholder='first name*'
+                  placeholder='name*'
                   {...field}
                 />
               </FormControl>
@@ -97,13 +115,13 @@ const Contact = () => {
         />
         <FormField
           control={form.control}
-          name='lastName'
+          name='phone'
           render={({ field }) => (
             <FormItem>
               <FormControl>
                 <Input
                   className='border-b border-stone-700'
-                  placeholder='last name*'
+                  placeholder='phone number*'
                   {...field}
                 />
               </FormControl>
@@ -129,22 +147,6 @@ const Contact = () => {
         />
         <FormField
           control={form.control}
-          name='zipCode'
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input
-                  className='border-b border-stone-700'
-                  placeholder='zip code*'
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
           name='organization'
           render={({ field }) => (
             <FormItem>
@@ -159,6 +161,72 @@ const Contact = () => {
             </FormItem>
           )}
         />
+        <FormField
+          control={form.control}
+          name='address'
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input
+                  className='border-b border-stone-700'
+                  placeholder='address*'
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='city'
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input
+                  className='border-b border-stone-700'
+                  placeholder='city*'
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <div className='flex flex-row justify-between  '>
+          <FormField
+            control={form.control}
+            name='state'
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input
+                    className='border-b border-stone-700 max-xs:max-w-32 w-[120%] '
+                    placeholder='state*'
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name='zipCode'
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input
+                    className='border-b border-stone-700 max-w-20'
+                    placeholder='zip code*'
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
         <FormField
           control={form.control}
           name='details'

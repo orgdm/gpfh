@@ -3,7 +3,7 @@ import TextImageLink from '../layout/TextImageLink';
 
 const Introduction = ({ text, imgs }: WhoProps) => {
   return (
-    <div className='px-6 mx-auto py-8 lg:py-24'>
+    <div className='px-6 mx-auto py-12 lg:py-24'>
       <TextImageLink
         text={text}
         title='Who We Are'

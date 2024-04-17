@@ -51,7 +51,7 @@ const TextImageLink = ({
         >
           <div className='lg:w-[90%]'>
             <Heading title={title} size='ti' />
-            <p className='font-light py-1 text-[1rem] md:text-[1.125rem] xl:text-[1.375rem] leading-normal lg:leading-relaxed w-full'>
+            <p className='font-light py-1 text-[1rem] md:text-[1.125rem] xl:text-[1.375rem] lg:leading-relaxed leading-normal w-full'>
               {text}
             </p>
             <div className='mt-8 flex items-end '>
