@@ -4,7 +4,7 @@ import { pageLinks } from '@/lib/misc';
 import { memo } from 'react';
 
 const baseStyle =
-  'fixed top-0 bottom-auto right-0 w-full h-scr transition-[transform] duration-300 ease-in-out';
+  'fixed top-0 bottom-auto right-0 w-full h-screen  transition-[transform] duration-300 ease-in-out';
 
 const FullScreenNav = memo(function FullScreenNav({
   open,
@@ -22,9 +22,9 @@ const FullScreenNav = memo(function FullScreenNav({
       }
     >
       <div className='relative'>
-        <div className='w-full min-h-scr flex justify-end relative pointer-events-none'>
+        <div className='w-full h-screen flex justify-end relative pointer-events-none'>
           <div
-            className={`w-full md:w-[45%] z-20 bg-stone-900 pointer-events-auto`}
+            className={`w-full md:w-[45%] z-20 h-full bg-stone-900 pointer-events-auto`}
           >
             <div
               className={`mt-[9em] mb-10 transition-[opacity] duration-360 delay-300 ease-in-out ${

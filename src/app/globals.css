@@ -39,12 +39,12 @@ body {
 
 html[data-scroll='y'],
 html[data-scroll='y'] > body {
-  overflow-y: auto;
+  overflow: auto;
 }
 
 html[data-scroll='n'],
 html[data-scroll='n'] > body {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 main {

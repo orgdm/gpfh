@@ -2,10 +2,10 @@ import type { FullScreenNavProps } from '@/types/home';
 import { memo } from 'react';
 
 const openBtnStyle =
-  'before:top-[14px] before:rotate-45 after:bottom-[14px] after:-rotate-45  ';
-const closedBtnStyle = 'before:top-[8px] after:bottom-[8px]';
+  'before:top-[0.9375rem] before:rotate-45 after:bottom-[0.9375rem] after:-rotate-45  ';
+const closedBtnStyle = 'before:top-[0.4375rem] after:bottom-[0.4375rem]';
 const baseBtnStyle =
-  'relative h-[30px] w-[30px] p-[10px] appearance-none bg-transparent border-none cursor-pointer before:absolute after:absolute before:block after:block before:bg-white after:bg-white before:w-[30px] after:w-[30px] before:h-[2px] after:h-[2px] before:left-[2px] after:left-[2px] before:right-[2px] after:right-[2px] before:transition-[transform] after:transition-[transform] before:ease-toggle after:ease-toggle before:duration-300 after:duration-300 ';
+  'relative h-[2rem] w-[2rem] p-[0.625rem] appearance-none bg-transparent border-none cursor-pointer before:absolute after:absolute before:block after:block before:bg-white after:bg-white before:w-[2rem] after:w-[2rem] before:h-[0.125rem] after:h-[0.125rem] before:left-[0.125rem] after:left-[0.125rem] before:right-[0.125rem] after:right-[0.125rem] before:transition-[transform] after:transition-[transform] before:ease-toggle after:ease-toggle before:duration-300 after:duration-300 ';
 
 const ToggleBtn = memo(function ToggleBtn({
   open,
