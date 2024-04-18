@@ -21,7 +21,7 @@ const FullScreenNav = memo(function FullScreenNav({
         }`
       }
     >
-      <div className='relative'>
+      <div className='bg-scroll'>
         <div className='w-full h-screen flex justify-end relative pointer-events-none'>
           <div
             className={`w-full md:w-[45%] z-20 h-full bg-stone-900 pointer-events-auto`}
