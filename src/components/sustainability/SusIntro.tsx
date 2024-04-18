@@ -3,7 +3,7 @@ import type { IntroProps } from '@/types/sustainability';
 
 const SusIntro = ({ text, img }: IntroProps) => {
   return (
-    <div className='relative before:absolute before:w-full before:h-full before:z-[1] before:bg-img-overlay overflow-hidden h-[47vh]'>
+    <div className='relative before:absolute before:w-full before:h-full before:z-[1] before:bg-img-overlay overflow-hidden h-[calc((47*1vh)+2rem)]'>
       <Image
         src={img.url}
         fill
