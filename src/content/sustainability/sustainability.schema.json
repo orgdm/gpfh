@@ -5,18 +5,62 @@
   "description": "GPFH about page content",
   "type": "object",
   "properties": {
+    "intro": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "img": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "alt": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
     "commitment": {
       "type": "object",
       "properties": {
         "title": {
-          "type": "string"
+          "type": "object",
+          "properties": {
+            "upper": {
+              "type": "string"
+            },
+            "lower": {
+              "type": "string"
+            }
+          }
         },
         "text": {
           "type": "string"
+        },
+        "img": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "alt": {
+              "type": "string"
+            }
+          }
         }
       }
     },
-    "greenPractices": {
+    "nhba": {
       "type": "object",
       "properties": {
         "text": {
@@ -48,6 +92,8 @@
     }
   },
   "required": [
-    "commitment"
+    "intro",
+    "commitment",
+    "ecoFriendly"
   ]
 }

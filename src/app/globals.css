@@ -25,19 +25,26 @@ html {
   scroll-behavior: smooth;
 }
 
+.scroll-none {
+  overflow-y: hidden;
+}
+
 body {
   color: #fff;
   background-color: var(--950);
   overscroll-behavior: none;
   font-weight: 500;
+  position: relative;
 }
 
-body[data-scroll='n'] {
-  overflow-y: hidden;
-}
-
-body[data-scroll='y'] {
+html[data-scroll='y'],
+html[data-scroll='y'] > body {
   overflow-y: auto;
+}
+
+html[data-scroll='n'],
+html[data-scroll='n'] > body {
+  overflow-y: hidden;
 }
 
 main {

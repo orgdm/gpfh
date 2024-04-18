@@ -22,8 +22,8 @@ const Header = () => {
 
   useEffect(() => {
     menuOpen
-      ? document.body.setAttribute('data-scroll', 'n')
-      : document.body.setAttribute('data-scroll', 'y');
+      ? document.documentElement.setAttribute('data-scroll', 'n')
+      : document.documentElement.setAttribute('data-scroll', 'y');
   }, [menuOpen]);
 
   useEffect(() => {
@@ -68,7 +68,7 @@ const Header = () => {
         } `}
       >
         <div
-          className={`relative px-4 h-head transition-[background-color] ease-linear duration-150  ${
+          className={`relative px-4 md:px-6 h-head transition-[background-color] ease-linear duration-150  ${
             scrollDir < 2 ? 'delay-500 bg-stone-900 ' : ' bg-transparent'
           }`}
         >

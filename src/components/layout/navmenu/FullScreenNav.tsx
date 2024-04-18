@@ -4,7 +4,7 @@ import { pageLinks } from '@/lib/misc';
 import { memo } from 'react';
 
 const baseStyle =
-  'fixed top-0 bottom-auto right-0 w-full min-h-scr transition-[transform] duration-300 ease-in-out';
+  'fixed top-0 bottom-auto right-0 w-full h-scr transition-[transform] duration-300 ease-in-out';
 
 const FullScreenNav = memo(function FullScreenNav({
   open,

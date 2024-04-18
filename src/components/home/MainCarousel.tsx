@@ -40,12 +40,12 @@ const MainCarousel = ({ imgs }: IntroCarouselProps) => {
         plugins={[plugin.current]}
         setApi={setApi}
       >
-        <CarouselContent className='h-screen'>
+        <CarouselContent>
           {imgs.map((img, index) => (
             <CarouselItem className='p-0 h-full' key={index}>
-              <div className={`relative h-full overflow-hidden`}>
+              <div className={`relative h-scr overflow-hidden`}>
                 <Image
-                  className='object-cover'
+                  className='object-cover h-auto w-full'
                   fill
                   priority={true}
                   src={img.url}
@@ -61,16 +61,18 @@ const MainCarousel = ({ imgs }: IntroCarouselProps) => {
       <div className={`absolute bottom-8 w-full z-10`}>
         <div className='flex flex-col justify-center'>
           <Button
-            className='mx-auto pointer-events-auto bg-[rgba(100,100,100,0.5)] backdrop-blur-sm '
+            className='mx-auto pointer-events-auto px-3 py-4 bg-[rgba(30,30,30,0.3)] backdrop-blur-sm '
             variant={'outlineSec'}
             size={'landing'}
             asChild
           >
             <Link
               href={'/projects'}
-              className='max-w-[600px] flex flex-row justify-between'
+              className='min-w-32  flex flex-row justify-between'
             >
-              <span className='me-6 font-normal text-main'>View Projects</span>
+              <span className='me-6 font-normal text-[1.125rem]'>
+                View Projects
+              </span>
               <CaretRightIcon height={30} width={30} />
             </Link>
           </Button>

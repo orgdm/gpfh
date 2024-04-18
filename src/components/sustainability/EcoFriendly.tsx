@@ -1,10 +1,10 @@
+import TextImageFull from '../layout/TextImageFull';
 import type { EcoFriendlyProps } from '@/types/sustainability';
-import TextImage from '../layout/TextImage';
 
-const EcoFriendly = ({ text, img }: EcoFriendlyProps) => {
+const EcoFriendly = ({ img, text }: EcoFriendlyProps) => {
   return (
-    <div className='px-8 py-24'>
-      <TextImage text={text} title={img.title} img={img} rtl={false} />
+    <div className='mb-[5em]'>
+      <TextImageFull img={img} title={img.title} text={text} rtl={true} />
     </div>
   );
 };

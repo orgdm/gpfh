@@ -9,21 +9,18 @@ const config: Config = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['var(--font-open-sans)', 'sans-serif'],
+				sans: ['var(--font-open-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
 				archivo: ['var(--font-archivo)', 'sans-serif'],
-				serif: ['ui-serif', 'Georgia'],
+				serif: ['ui-serif', 'serif', 'Georgia'],
 				mono: ['ui-monospace', 'SFMono-Regular'],
 				display: ['Oswald'],
-				body: ['var(--font-open-sans)', 'sans-serif'],
+				body: ['var(--font-open-sans)', 'system-ui', 'sans-serif'],
 			},
 			fontSize: {
 				main: '1.12146rem',
-				tibp: 'clamp(18px, calc(0.7em + 0.7vw), 22px)',
-				tibtext2: 'calc(0.9rem + 0.42vw)',
-				hs1: 'clamp(1.75rem, calc(1.5rem + 0.65vw), 2.75rem)',
 				'4xl': '2rem',
-				'5xl': '2.6rem',
-				'6xl': '3.4rem',
+				'5xl': '2.5rem',
+				'6xl': '2.875rem',
 				'7xl': '4.2rem',
 			},
 			letterSpacing: {
