@@ -46,8 +46,10 @@ html[data-scroll='n'] > body {
 }
 
 html[data-scroll='n'] > body {
-  padding-right: 17px;
-  /* scroll-padding-right: 17px; */
+  position: fixed;
+}
+html[data-scroll='n'] > body {
+  position: relative;
 }
 
 main {

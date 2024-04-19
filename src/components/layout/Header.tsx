@@ -33,7 +33,7 @@ const Header = () => {
 
     const updateDir = () => {
       const y: number = window.scrollY;
-      const initial: boolean = lastY < 5;
+      const initial: boolean = lastY < 8;
 
       if (Math.abs(y - lastY) < thresh) {
         ticking = false;
@@ -59,7 +59,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed z-50 left-0 right-0 top-0 bottom-auto transition-[transform] bg-head-overlay duration-360 ease-io-head bg-scroll ${
+        className={`fixed z-50 left-0 right-0 top-0 bottom-auto transition-[transform] bg-head-overlay duration-300 ease-io-head bg-scroll ${
           menuOpen
             ? ' translate-y-0'
             : scrollDir > 0

@@ -16,7 +16,7 @@ const ToggleBtn = memo(function ToggleBtn({
       <ul className='flex items-center xxl:hidden pt-1'>
         <li
           id='menuToggleOuter'
-          className='z-[100] h-9 sk   w-9 appearance-none flex items-center justify-end pointer-events-auto no-underline aspect-square'
+          className='z-[100] h-9 w-9 appearance-none flex items-center justify-end pointer-events-auto no-underline aspect-square'
         >
           <button
             aria-label='Toggle Menu'
