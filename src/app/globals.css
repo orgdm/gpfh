@@ -36,25 +36,30 @@ body {
 }
 
 html[data-scroll='y'] {
-	overflow-y: auto;
+	overflow: auto;
 }
 
 html[data-scroll='n'] {
-	overflow-y: hidden;
+	overflow: hidden;
 }
 
 html[data-scroll='n'] > body {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
 	overflow: hidden;
-	padding-right: 0.875rem;
 }
 html[data-scroll='y'] > body {
 	position: relative;
 	overflow: auto;
+}
+
+@media (min-width: 1024px) {
+	html[data-scroll='n'] > body {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding-right: 0.875rem;
+	}
 }
 
 main {
