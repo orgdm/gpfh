@@ -3,200 +3,159 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --950: rgb(12, 10, 9);
-  --900: rgb(28, 25, 23);
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
+	--950: rgb(12, 10, 9);
+	--900: rgb(28, 25, 23);
 
-  --600: rgb(87, 83, 78);
+	--600: rgb(87, 83, 78);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
 }
 
 html {
-  overscroll-behavior: none;
-  scroll-behavior: smooth;
+	overscroll-behavior: none;
+	scroll-behavior: smooth;
 }
 
 body {
-  color: #fff;
-  background-color: var(--950);
-  overscroll-behavior: none;
-  font-weight: 500;
-  border: none;
-  position: relative;
-  overflow-x: hidden;
+	color: #fff;
+	background-color: var(--950);
+	overscroll-behavior: none;
+	font-weight: 500;
+	border: none;
+	width: 100%;
+	overflow-x: hidden;
 }
 
-html[data-scroll='y'],
+html[data-scroll='y'] {
+	overflow-y: auto;
+}
+
+html[data-scroll='n'] {
+	overflow-y: hidden;
+}
+
+html[data-scroll='n'] > body {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	padding-right: 0.875rem;
+}
 html[data-scroll='y'] > body {
-  overflow-y: scroll;
-}
-
-html[data-scroll='n'],
-html[data-scroll='n'] > body {
-  overflow-y: hidden;
-}
-
-html[data-scroll='n'] > body {
-  position: fixed;
-}
-html[data-scroll='n'] > body {
-  position: relative;
+	position: relative;
+	overflow: auto;
 }
 
 main {
-  background-color: var(--950);
-  min-height: 100vh;
-  min-height: 100svh;
+	background-color: var(--950);
+	min-height: 100vh;
+	min-height: 100svh;
 }
 
 footer {
-  background-color: var(--900);
-  padding: 1rem;
+	background-color: var(--900);
+	padding: 1rem;
 }
 
 @layer utilities {
-  .min-h-scr {
-    min-height: 100vh;
-    min-height: 100svh;
-  }
-  .h-scr {
-    min-height: 100vh;
-    min-height: 100svh;
-  }
-  .max-h-scr {
-    max-height: 100vh;
-    max-height: 100svh;
-  }
+	.min-h-scr {
+		min-height: 100vh;
+		min-height: 100svh;
+	}
+	.h-scr {
+		min-height: 100vh;
+		min-height: 100svh;
+	}
+	.max-h-scr {
+		max-height: 100vh;
+		max-height: 100svh;
+	}
 }
 
 @layer utilities {
-  .link {
-    position: relative;
-  }
-  .link::after {
-    height: 1px;
-    position: absolute;
-    left: 0;
-    top: 1.7rem;
-    width: 100%;
-    background-color: #fff;
-    content: '';
-    transition-property: transform;
-    transition-duration: 300ms;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition-delay: 0ms;
-    transition-timing-function: ease;
-  }
-  .link:hover::after {
-    content: '';
-    transform: scale(1);
-    transform-origin: left;
-    transition: transform 300ms ease;
-  }
+	.link {
+		position: relative;
+	}
+	.link::after {
+		height: 1px;
+		position: absolute;
+		left: 0;
+		top: 1.7rem;
+		width: 100%;
+		background-color: #fff;
+		content: '';
+		transition-property: transform;
+		transition-duration: 300ms;
+		transform-origin: right;
+		transform: scaleX(0);
+		transition-delay: 0ms;
+		transition-timing-function: ease;
+	}
+	.link:hover::after {
+		content: '';
+		transform: scale(1);
+		transform-origin: left;
+		transition: transform 300ms ease;
+	}
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+	.text-balance {
+		text-wrap: balance;
+	}
 }
 
 @layer utilities {
-  .ease-in-head {
-    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-  }
-  .ease-io-head {
-    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-  .ease-head-overlay {
-    transition-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335);
-  }
-  .ease-toggle {
-    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-  .ease-up {
-    transition: transform 350ms cubic-bezier(0.55, 0.055, 0.675, 0.19),
-      opacity 200ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
-    transition-delay: 75ms;
-  }
+	.ease-in-head {
+		transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+	}
+	.ease-io-head {
+		transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+	}
+	.ease-head-overlay {
+		transition-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+	}
+	.ease-toggle {
+		transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	}
+	.ease-up {
+		transition: transform 350ms cubic-bezier(0.55, 0.055, 0.675, 0.19),
+			opacity 200ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+		transition-delay: 75ms;
+	}
 }
 
 @layer utilities {
-  .skip-nav {
-    padding: 0.5rem;
-    pointer-events: auto;
-    color: #000;
-    background-color: #fff;
-    position: absolute;
-    left: 0;
-    top: -5rem;
-    overflow: hidden;
-    border-bottom-right-radius: 1.25rem;
-    transition-property: top;
-    transition-duration: 500ms;
-    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    z-index: 150;
-  }
-  .skip-nav:focus {
-    top: 0;
-    transition-property: top;
-    transition-duration: 300ms;
-    transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-  }
+	.skip-nav {
+		padding: 0.5rem;
+		pointer-events: auto;
+		color: #000;
+		background-color: #fff;
+		position: absolute;
+		left: 0;
+		top: -5rem;
+		overflow: hidden;
+		border-bottom-right-radius: 1.25rem;
+		transition-property: top;
+		transition-duration: 500ms;
+		transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+		z-index: 150;
+	}
+	.skip-nav:focus {
+		top: 0;
+		transition-property: top;
+		transition-duration: 300ms;
+		transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+	}
 }
-
-/* @layer utilities {
-  .footer-grid {
-    min-height: 12rem;
-    display: grid;
-    grid-template-rows: repeat(3, minmax(0, 1fr)) 1fr;
-    grid-template-columns: 1fr;
-  }
-  .footer-row-1 {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .footer-row-2 {
-    margin-block: 0.5em;
-  }
-  .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 0.5rem;
-    column-gap: 1rem;
-  }
-  .media-icon {
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 9999px;
-    background-color: var(--600);
-    transform: translateY(0px);
-    transition-property: transform;
-    transition-duration: 150ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .media-icon:hover {
-    transform: translateY(-0.25rem);
-  }
-  .cr-wrap {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    flex-shrink: 0;
-  }
-} */
