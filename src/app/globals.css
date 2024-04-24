@@ -64,6 +64,9 @@ html[data-scroll='y'] > body {
   html {
     scrollbar-gutter: stable;
   }
+  html::-webkit-scrollbar-track {
+    background-color: var(--900);
+  }
 }
 
 main {
