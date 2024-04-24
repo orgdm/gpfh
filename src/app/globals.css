@@ -64,8 +64,11 @@ html[data-scroll='y'] > body {
   html {
     scrollbar-gutter: stable;
   }
-  html[data-scroll='n'] {
-    scrollbar-color: var(--900) var(--900);
+  html[data-scroll='n'] > body {
+    padding-right: 17px;
+  }
+  html[data-scroll='y'] > body {
+    padding-right: 0px;
   }
 }
 
