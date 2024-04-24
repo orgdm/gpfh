@@ -23,7 +23,6 @@
 html {
   overscroll-behavior: none;
   scroll-behavior: smooth;
-  scrollbar-gutter: overlay;
 }
 
 body {
@@ -59,6 +58,13 @@ html[data-scroll='n'] > body {
 html[data-scroll='y'] > body {
   position: relative;
   overflow: auto;
+}
+
+@supports (scrollbar-gutter: overlay) {
+  html,
+  body {
+    scrollbar-gutter: overlay;
+  }
 }
 
 main {
