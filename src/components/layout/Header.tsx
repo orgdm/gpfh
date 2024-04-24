@@ -104,9 +104,9 @@ const Header = () => {
         <div className='block xxl:hidden'>
           <FullScreenNav setOpen={setMenuOpen} open={menuOpen} />
         </div>
-        <div className='block xxl:hidden'>
+        {/* <div className='block xxl:hidden'>
           <CloseOnClick setOpen={setMenuOpen} open={menuOpen} />
-        </div>
+        </div> */}
       </header>
     </>
   );

@@ -64,8 +64,8 @@ html[data-scroll='y'] > body {
   html {
     scrollbar-gutter: stable;
   }
-  nav {
-    scrollbar-width: none;
+  html[data-scroll='n'] {
+    scrollbar-color: var(--900) var(--900);
   }
 }
 
