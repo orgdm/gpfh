@@ -60,10 +60,9 @@ html[data-scroll='y'] > body {
   overflow: auto;
 }
 
-@supports (scrollbar-gutter: overlay) {
-  html,
-  body {
-    scrollbar-gutter: overlay;
+@supports (scrollbar-gutter: stable) {
+  html {
+    scrollbar-gutter: stable;
   }
 }
 
