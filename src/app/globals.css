@@ -64,6 +64,9 @@ html[data-scroll='y'] > body {
   html {
     scrollbar-gutter: stable;
   }
+  html::-webkit-scrollbar {
+    visibility: hidden;
+  }
 }
 
 main {

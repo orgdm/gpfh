@@ -4,7 +4,7 @@ import { pageLinks } from '@/lib/misc';
 import { memo } from 'react';
 
 const baseStyle =
-  'fixed top-0 bottom-auto md:m-[-17px] right-0 w-full h-[calc(1vh*100+4rem)] transition-[transform] duration-500 bg-scroll ease-in-out';
+  'fixed top-0 bottom-auto right-0 w-full h-[calc(1vh*100+4rem)] transition-[transform] duration-500 bg-scroll ease-in-out';
 
 const FullScreenNav = memo(function FullScreenNav({
   open,
@@ -17,7 +17,7 @@ const FullScreenNav = memo(function FullScreenNav({
         `${
           open
             ? ' translate-y-0 pointer-events-auto overflow-hidden'
-            : ' -translate-y-full pointer-events-none overflow-auto'
+            : ' -translate-y-full pointer-events-none'
         }`
       }
     >
