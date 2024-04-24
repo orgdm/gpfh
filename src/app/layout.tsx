@@ -20,12 +20,14 @@ const archivo = Archivo({
 export const metadata: Metadata = {
   title: 'Next App',
   description: 'create next app',
+  appleWebApp: {
+    statusBarStyle: 'black',
+  },
 };
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 10,
   userScalable: true,
   themeColor: '#1c1917',
 };
