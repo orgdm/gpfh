@@ -45,15 +45,15 @@ body {
 /* }  */
 
 html[data-scroll='y'] {
-  overflow-y: auto;
+  overflow: auto;
 }
 
 html[data-scroll='n'] {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 html[data-scroll='n'] > body {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 html[data-scroll='y'] > body {
   position: relative;
@@ -64,8 +64,8 @@ html[data-scroll='y'] > body {
   html {
     scrollbar-gutter: stable;
   }
-  html::-webkit-scrollbar {
-    visibility: hidden;
+  nav {
+    scrollbar-width: none;
   }
 }
 
