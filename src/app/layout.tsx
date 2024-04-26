@@ -1,15 +1,9 @@
 import type { Metadata, Viewport } from 'next';
-import { Open_Sans, Archivo } from 'next/font/google';
+import { Archivo } from 'next/font/google';
 import './globals.css';
 import SkipToMain from '@/components/layout/SkipToMain';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/footer/Footer';
-
-const openSans = Open_Sans({
-  subsets: ['latin'],
-  variable: '--font-open-sans',
-  display: 'swap',
-});
 
 const archivo = Archivo({
   subsets: ['latin'],
@@ -38,7 +32,7 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang='en' className={`${archivo.variable} ${openSans.variable}`}>
+    <html lang='en' className={`${archivo.variable}`}>
       <body>
         <SkipToMain />
         <Header />
