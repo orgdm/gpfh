@@ -47,7 +47,7 @@ const MainCarousel = ({ imgs }: IntroCarouselProps) => {
                 <Image
                   className='object-cover h-auto w-full'
                   fill
-                  priority={true}
+                  priority={index == 0 ? true : false}
                   src={img.url}
                   alt={img.alt}
                   placeholder='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
